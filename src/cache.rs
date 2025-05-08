@@ -42,23 +42,76 @@ impl Cache {
                 )
             })?;
 
-        let mut link_iter = stmt
-            .query_and_then([self.name.clone(), url.to_string()], |row| {
-                let tags_sql: String = row.get(3)?;
-                Ok(ParsedLink::new(
-                    row.get(0)?,
-                    row.get(1)?,
-                    row.get(2)?,
-                    serde_json::from_str(&tags_sql)?,
-                    row.get(4)?,
-                ))
-            })
+        let mut rows = stmt
+            .query([self.name.clone(), url.to_string()])
+            .with_context(|| format!("Failed to query for links with url {url}"))?;
+
+        if let Some(row) = rows.next()? {
+            let tags_sql: String = row.get(3)?;
+            return Ok(Some(ParsedLink::new(
+                row.get(0)?,
+                row.get(1)?,
+                row.get(2)?,
+                serde_json::from_str(&tags_sql)?,
+                row.get(4)?,
+            )));
+        }
+        Ok(None)
+    }
+
+    pub fn query_all(&self, url: &str) -> anyhow::Result<Vec<ParsedLink>> {
+        let mut stmt = self
+            .conn
+            .prepare("SELECT url, title, source, tags, parsed_content FROM (?1)")
             .with_context(|| {
                 format!(
-                    "Failed to query for for {} looking for link {}",
+                    "Failed to prepare query for {} looking for link {}",
                     self.name, url
                 )
             })?;
-        Ok(link_iter.next().transpose()?)
+
+        let mut links = Vec::new();
+        let mut rows = stmt
+            .query([self.name.clone(), url.to_string()])
+            .context("Failed to query for all links")?;
+        while let Some(row) = rows.next()? {
+            let tags_sql: String = row.get(3)?;
+            links.push(ParsedLink::new(
+                row.get(0)?,
+                row.get(1)?,
+                row.get(2)?,
+                serde_json::from_str(&tags_sql)?,
+                row.get(4)?,
+            ));
+        }
+        Ok(links)
+    }
+
+    pub fn query_unarchived(&self) -> anyhow::Result<Vec<ParsedLink>> {
+        let mut stmt = self
+            .conn
+            .prepare("SELECT url, title, source, tags, parsed_content FROM (?1) WHERE archived_at IS NULL")
+            .with_context(|| {
+                format!(
+                    "Failed to prepare query for {} looking for unarchived links",
+                    self.name
+                )
+            })?;
+
+        let mut links = Vec::new();
+        let mut rows = stmt
+            .query([self.name.clone()])
+            .context("Failed to query for all links")?;
+        while let Some(row) = rows.next()? {
+            let tags_sql: String = row.get(3)?;
+            links.push(ParsedLink::new(
+                row.get(0)?,
+                row.get(1)?,
+                row.get(2)?,
+                serde_json::from_str(&tags_sql)?,
+                row.get(4)?,
+            ));
+        }
+        Ok(links)
     }
 }
