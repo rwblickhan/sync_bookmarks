@@ -1,4 +1,7 @@
-use rusqlite::types::{FromSql, FromSqlError};
+use rusqlite::{
+    types::{FromSql, FromSqlError, ToSqlOutput, Value, ValueRef},
+    ToSql,
+};
 
 pub enum LinkSource {
     GoodLinks,
@@ -6,9 +9,7 @@ pub enum LinkSource {
 }
 
 impl FromSql for LinkSource {
-    fn column_result(
-        value: rusqlite::types::ValueRef,
-    ) -> std::result::Result<LinkSource, FromSqlError> {
+    fn column_result(value: ValueRef) -> std::result::Result<LinkSource, FromSqlError> {
         match value.as_str()? {
             "GoodLinks" => Ok(LinkSource::GoodLinks),
             "Obsidian" => Ok(LinkSource::Obsidian),
@@ -17,12 +18,21 @@ impl FromSql for LinkSource {
     }
 }
 
+impl ToSql for LinkSource {
+    fn to_sql(&self) -> std::result::Result<ToSqlOutput<'_>, rusqlite::Error> {
+        match self {
+            LinkSource::GoodLinks => Ok(ToSqlOutput::Owned(Value::Text("GoodLinks".into()))),
+            LinkSource::Obsidian => Ok(ToSqlOutput::Owned(Value::Text("Obsidian".into()))),
+        }
+    }
+}
+
 pub struct ParsedLink {
-    url: String,
-    title: String,
-    source: LinkSource,
-    tags: Vec<String>,
-    text_content: String,
+    pub url: String,
+    pub title: String,
+    pub source: LinkSource,
+    pub tags: Vec<String>,
+    pub text_content: String,
 }
 
 impl ParsedLink {

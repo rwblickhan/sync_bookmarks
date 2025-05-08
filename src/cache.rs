@@ -1,5 +1,5 @@
 use anyhow::{Context, Ok};
-use rusqlite::Connection;
+use rusqlite::{params, Connection};
 
 use crate::types::ParsedLink;
 
@@ -113,5 +113,21 @@ impl Cache {
             ));
         }
         Ok(links)
+    }
+
+    pub fn insert(&self, link: &ParsedLink) -> anyhow::Result<()> {
+        let tags_sql = serde_json::to_string(&link.tags)?;
+        self.conn.execute(
+            "INSERT INTO (?1) (url, title, source, tags, parsed_content, archived_at) VALUES (?2, ?3, ?4, ?5, ?6, NULL)",
+            params![
+                self.name.clone(),
+                link.url,
+                link.title,
+                link.source,
+                tags_sql,
+                link.text_content
+            ],
+        )?;
+        Ok(())
     }
 }
