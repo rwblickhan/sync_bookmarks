@@ -10,11 +10,10 @@ pub enum CacheType {
 
 pub struct Cache {
     conn: Connection,
-    table_name: String,
 }
 
 impl Cache {
-    pub fn new(table_name: &str, cache_type: CacheType) -> anyhow::Result<Self> {
+    pub fn new(cache_type: CacheType) -> anyhow::Result<Self> {
         let conn = match cache_type {
             CacheType::Memory => Connection::open_in_memory(),
             CacheType::Disk(name) => Connection::open(name),
@@ -22,7 +21,7 @@ impl Cache {
         .context("Failed to open database")?;
 
         conn.execute(
-            "CREATE TABLE IF NOT EXISTS :table_name (
+            "CREATE TABLE IF NOT EXISTS cache (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 url TEXT UNIQUE,
                 title TEXT,
@@ -31,31 +30,21 @@ impl Cache {
                 tags JSON,
                 archived_at DATETIME
             )",
-            named_params![":table_name": table_name],
+            [],
         )
-        .with_context(|| format!("Failed to create table {}", table_name))?;
+        .context("Failed to create table")?;
 
-        Ok(Cache {
-            conn,
-            table_name: table_name.to_string(),
-        })
+        Ok(Cache { conn })
     }
 
     pub fn query(&self, url: &str) -> anyhow::Result<Option<ParsedLink>> {
         let mut stmt = self
             .conn
-            .prepare(
-                "SELECT url, title, source, tags, parsed_content FROM :table_name WHERE url = :url",
-            )
-            .with_context(|| {
-                format!(
-                    "Failed to prepare query for {} looking for link {}",
-                    self.table_name, url
-                )
-            })?;
+            .prepare("SELECT url, title, source, tags, parsed_content FROM cache WHERE url = :url")
+            .with_context(|| format!("Failed to prepare query looking for link {}", url))?;
 
         let mut rows = stmt
-            .query(named_params![":table_name": self.table_name, ":url": url.to_string()])
+            .query(named_params![":url": url.to_string()])
             .with_context(|| format!("Failed to query for links with url {url}"))?;
 
         if let Some(row) = rows.next()? {
@@ -74,18 +63,11 @@ impl Cache {
     pub fn query_all(&self) -> anyhow::Result<Vec<ParsedLink>> {
         let mut stmt = self
             .conn
-            .prepare("SELECT url, title, source, tags, parsed_content FROM :table_name")
-            .with_context(|| {
-                format!(
-                    "Failed to prepare query for {} looking for all links",
-                    self.table_name,
-                )
-            })?;
+            .prepare("SELECT url, title, source, tags, parsed_content FROM cache")
+            .with_context(|| format!("Failed to prepare query looking for all links",))?;
 
         let mut links = Vec::new();
-        let mut rows = stmt
-            .query(named_params![":table_name": self.table_name])
-            .context("Failed to query for all links")?;
+        let mut rows = stmt.query([]).context("Failed to query for all links")?;
         while let Some(row) = rows.next()? {
             let tags_sql: String = row.get(3)?;
             links.push(ParsedLink::new(
@@ -102,18 +84,15 @@ impl Cache {
     pub fn query_unarchived(&self) -> anyhow::Result<Vec<ParsedLink>> {
         let mut stmt = self
             .conn
-            .prepare("SELECT url, title, source, tags, parsed_content FROM :name WHERE archived_at IS NULL")
+            .prepare("SELECT url, title, source, tags, parsed_content FROM cache WHERE archived_at IS NULL")
             .with_context(|| {
                 format!(
-                    "Failed to prepare query for {} looking for unarchived links",
-                    self.table_name
+                    "Failed to prepare query looking for unarchived links",
                 )
             })?;
 
         let mut links = Vec::new();
-        let mut rows = stmt
-            .query(named_params![":name": self.table_name])
-            .context("Failed to query for all links")?;
+        let mut rows = stmt.query([]).context("Failed to query for all links")?;
         while let Some(row) = rows.next()? {
             let tags_sql: String = row.get(3)?;
             links.push(ParsedLink::new(
@@ -130,9 +109,8 @@ impl Cache {
     pub fn insert(&self, link: &ParsedLink) -> anyhow::Result<()> {
         let tags_sql = serde_json::to_string(&link.tags)?;
         self.conn.execute(
-            "INSERT INTO :name (url, title, source, tags, parsed_content, archived_at) VALUES (:url, :title, :source, :tags, :parsed_content, NULL)",
+            "INSERT INTO cache (url, title, source, tags, parsed_content, archived_at) VALUES (:url, :title, :source, :tags, :parsed_content, NULL)",
             named_params![
-                ":name": self.table_name,
                 ":url": link.url,
                 ":title": link.title,
                 ":source": link.source,
