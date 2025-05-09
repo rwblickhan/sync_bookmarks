@@ -1,5 +1,5 @@
 use anyhow::{Context, Ok};
-use rusqlite::{params, Connection};
+use rusqlite::{named_params, Connection};
 
 use crate::types::ParsedLink;
 
@@ -12,7 +12,7 @@ impl Cache {
     pub fn new(name: &str) -> anyhow::Result<Self> {
         let conn = Connection::open(name).context("Failed to open database")?;
         conn.execute(
-            "CREATE TABLE IF NOT EXISTS (?1) (
+            "CREATE TABLE IF NOT EXISTS :name (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 url TEXT UNIQUE,
                 title TEXT,
@@ -21,7 +21,7 @@ impl Cache {
                 tags JSON,
                 archived_at DATETIME
             )",
-            [name],
+            named_params![":name": name],
         )
         .with_context(|| format!("Failed to create table {}", name))?;
 
@@ -34,7 +34,7 @@ impl Cache {
     pub fn query(&self, url: &str) -> anyhow::Result<Option<ParsedLink>> {
         let mut stmt = self
             .conn
-            .prepare("SELECT url, title, source, tags, parsed_content FROM (?1) WHERE url = (?2)")
+            .prepare("SELECT url, title, source, tags, parsed_content FROM :name WHERE url = :url")
             .with_context(|| {
                 format!(
                     "Failed to prepare query for {} looking for link {}",
@@ -43,7 +43,7 @@ impl Cache {
             })?;
 
         let mut rows = stmt
-            .query([self.name.clone(), url.to_string()])
+            .query(named_params![":name": self.name.clone(), ":url": url.to_string()])
             .with_context(|| format!("Failed to query for links with url {url}"))?;
 
         if let Some(row) = rows.next()? {
@@ -59,20 +59,20 @@ impl Cache {
         Ok(None)
     }
 
-    pub fn query_all(&self, url: &str) -> anyhow::Result<Vec<ParsedLink>> {
+    pub fn query_all(&self) -> anyhow::Result<Vec<ParsedLink>> {
         let mut stmt = self
             .conn
-            .prepare("SELECT url, title, source, tags, parsed_content FROM (?1)")
+            .prepare("SELECT url, title, source, tags, parsed_content FROM :name")
             .with_context(|| {
                 format!(
-                    "Failed to prepare query for {} looking for link {}",
-                    self.name, url
+                    "Failed to prepare query for {} looking for all links",
+                    self.name,
                 )
             })?;
 
         let mut links = Vec::new();
         let mut rows = stmt
-            .query([self.name.clone(), url.to_string()])
+            .query(named_params![":name": self.name.clone()])
             .context("Failed to query for all links")?;
         while let Some(row) = rows.next()? {
             let tags_sql: String = row.get(3)?;
@@ -90,7 +90,7 @@ impl Cache {
     pub fn query_unarchived(&self) -> anyhow::Result<Vec<ParsedLink>> {
         let mut stmt = self
             .conn
-            .prepare("SELECT url, title, source, tags, parsed_content FROM (?1) WHERE archived_at IS NULL")
+            .prepare("SELECT url, title, source, tags, parsed_content FROM :name WHERE archived_at IS NULL")
             .with_context(|| {
                 format!(
                     "Failed to prepare query for {} looking for unarchived links",
@@ -100,7 +100,7 @@ impl Cache {
 
         let mut links = Vec::new();
         let mut rows = stmt
-            .query([self.name.clone()])
+            .query(named_params![":name": self.name.clone()])
             .context("Failed to query for all links")?;
         while let Some(row) = rows.next()? {
             let tags_sql: String = row.get(3)?;
@@ -118,14 +118,14 @@ impl Cache {
     pub fn insert(&self, link: &ParsedLink) -> anyhow::Result<()> {
         let tags_sql = serde_json::to_string(&link.tags)?;
         self.conn.execute(
-            "INSERT INTO (?1) (url, title, source, tags, parsed_content, archived_at) VALUES (?2, ?3, ?4, ?5, ?6, NULL)",
-            params![
-                self.name.clone(),
-                link.url,
-                link.title,
-                link.source,
-                tags_sql,
-                link.text_content
+            "INSERT INTO :name (url, title, source, tags, parsed_content, archived_at) VALUES (:url, :title, :source, :tags, :parsed_content, NULL)",
+            named_params![
+                ":name": self.name.clone(),
+                ":url": link.url,
+                ":title": link.title,
+                ":source": link.source,
+                ":tags": tags_sql,
+                ":parsed_content": link.text_content
             ],
         )?;
         Ok(())
