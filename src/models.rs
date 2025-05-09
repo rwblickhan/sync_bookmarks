@@ -3,6 +3,7 @@ use rusqlite::{
     ToSql,
 };
 
+#[derive(serde::Serialize)]
 pub enum LinkSource {
     GoodLinks,
     Obsidian,
