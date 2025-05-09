@@ -1,5 +1,5 @@
 pub mod cache;
-pub mod types;
+pub mod models;
 
 fn main() {
     println!("Hello, world!");

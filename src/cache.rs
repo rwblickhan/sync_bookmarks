@@ -1,7 +1,7 @@
 use anyhow::{Context, Ok};
 use rusqlite::{named_params, Connection};
 
-use crate::types::ParsedLink;
+use crate::models::ParsedLink;
 
 pub struct Cache {
     conn: Connection,
