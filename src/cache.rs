@@ -64,7 +64,7 @@ impl Cache {
         let mut stmt = self
             .conn
             .prepare("SELECT url, title, source, tags, parsed_content FROM cache")
-            .with_context(|| format!("Failed to prepare query looking for all links",))?;
+            .context("Failed to prepare query looking for all links")?;
 
         let mut links = Vec::new();
         let mut rows = stmt.query([]).context("Failed to query for all links")?;
@@ -85,11 +85,7 @@ impl Cache {
         let mut stmt = self
             .conn
             .prepare("SELECT url, title, source, tags, parsed_content FROM cache WHERE archived_at IS NULL")
-            .with_context(|| {
-                format!(
-                    "Failed to prepare query looking for unarchived links",
-                )
-            })?;
+            .context("Failed to prepare query looking for unarchived links")?;
 
         let mut links = Vec::new();
         let mut rows = stmt.query([]).context("Failed to query for all links")?;

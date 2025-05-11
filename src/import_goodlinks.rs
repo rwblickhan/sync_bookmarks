@@ -61,7 +61,7 @@ pub fn import_goodlinks() -> anyhow::Result<()> {
     serde_json::to_writer_pretty(serialized_links_file, &serialized_links)
         .context("Failed to write to links.json")?;
 
-    println!("Serialized {serialized} links; skipped {not_read_skipped} unread links and {already_serialized_skipped} links already serialized");
+    println!("Serialized {serialized} GoodLinks links; skipped {not_read_skipped} unread links and {already_serialized_skipped} links already serialized");
 
     Ok(())
 }

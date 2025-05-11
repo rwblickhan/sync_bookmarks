@@ -58,8 +58,8 @@ impl CachedLink {
 pub struct SerializedLink {
     pub url: String,
     pub title: String,
-    pub source: LinkSource,
     pub tags: Vec<String>,
+    pub source: LinkSource,
 }
 
 impl From<GoodLinksLink> for SerializedLink {
@@ -73,11 +73,27 @@ impl From<GoodLinksLink> for SerializedLink {
     }
 }
 
+impl From<ObsidianLink> for SerializedLink {
+    fn from(val: ObsidianLink) -> Self {
+        SerializedLink {
+            url: val.url,
+            title: val.title,
+            tags: Vec::new(),
+            source: LinkSource::Obsidian,
+        }
+    }
+}
+
 #[derive(serde::Deserialize)]
 pub struct GoodLinksLink {
     #[serde(rename = "readAt")]
     pub read_at: Option<f32>,
     pub title: Option<String>,
     pub tags: Vec<String>,
+    pub url: String,
+}
+
+pub struct ObsidianLink {
+    pub title: String,
     pub url: String,
 }
