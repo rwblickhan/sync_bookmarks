@@ -3,7 +3,7 @@ use rusqlite::{
     ToSql,
 };
 
-#[derive(serde::Serialize)]
+#[derive(serde::Serialize, serde::Deserialize, PartialEq, Eq, Hash)]
 pub enum LinkSource {
     GoodLinks,
     Obsidian,
@@ -28,7 +28,7 @@ impl ToSql for LinkSource {
     }
 }
 
-pub struct ParsedLink {
+pub struct CachedLink {
     pub url: String,
     pub title: String,
     pub source: LinkSource,
@@ -36,7 +36,7 @@ pub struct ParsedLink {
     pub text_content: String,
 }
 
-impl ParsedLink {
+impl CachedLink {
     pub fn new(
         url: String,
         title: String,
@@ -44,7 +44,7 @@ impl ParsedLink {
         tags: Vec<String>,
         text_content: String,
     ) -> Self {
-        ParsedLink {
+        CachedLink {
             url,
             title,
             source,
@@ -52,4 +52,32 @@ impl ParsedLink {
             text_content,
         }
     }
+}
+
+#[derive(serde::Serialize, serde::Deserialize, PartialEq, Eq, Hash)]
+pub struct SerializedLink {
+    pub url: String,
+    pub title: String,
+    pub source: LinkSource,
+    pub tags: Vec<String>,
+}
+
+impl From<GoodLinksLink> for SerializedLink {
+    fn from(val: GoodLinksLink) -> Self {
+        SerializedLink {
+            url: val.url,
+            title: val.title.unwrap_or_default(),
+            tags: val.tags,
+            source: LinkSource::GoodLinks,
+        }
+    }
+}
+
+#[derive(serde::Deserialize)]
+pub struct GoodLinksLink {
+    #[serde(rename = "readAt")]
+    pub read_at: Option<f32>,
+    pub title: Option<String>,
+    pub tags: Vec<String>,
+    pub url: String,
 }

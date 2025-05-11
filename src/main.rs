@@ -1,6 +1,7 @@
 mod cache;
 mod cli;
 mod export_raindrop;
+mod import_goodlinks;
 mod models;
 
 use clap::Parser;
@@ -11,5 +12,6 @@ fn main() -> anyhow::Result<()> {
 
     match cli.command {
         Commands::Raindrop => export_raindrop::export_raindrop(),
+        Commands::Import => import_goodlinks::import_goodlinks(),
     }
 }

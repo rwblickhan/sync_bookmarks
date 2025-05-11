@@ -1,7 +1,7 @@
 use anyhow::{Context, Ok};
 use rusqlite::{named_params, Connection};
 
-use crate::models::ParsedLink;
+use crate::models::CachedLink;
 
 pub enum CacheType {
     Disk(String),
@@ -37,7 +37,7 @@ impl Cache {
         Ok(Cache { conn })
     }
 
-    pub fn query(&self, url: &str) -> anyhow::Result<Option<ParsedLink>> {
+    pub fn query(&self, url: &str) -> anyhow::Result<Option<CachedLink>> {
         let mut stmt = self
             .conn
             .prepare("SELECT url, title, source, tags, parsed_content FROM cache WHERE url = :url")
@@ -49,7 +49,7 @@ impl Cache {
 
         if let Some(row) = rows.next()? {
             let tags_sql: String = row.get(3)?;
-            return Ok(Some(ParsedLink::new(
+            return Ok(Some(CachedLink::new(
                 row.get(0)?,
                 row.get(1)?,
                 row.get(2)?,
@@ -60,7 +60,7 @@ impl Cache {
         Ok(None)
     }
 
-    pub fn query_all(&self) -> anyhow::Result<Vec<ParsedLink>> {
+    pub fn query_all(&self) -> anyhow::Result<Vec<CachedLink>> {
         let mut stmt = self
             .conn
             .prepare("SELECT url, title, source, tags, parsed_content FROM cache")
@@ -70,7 +70,7 @@ impl Cache {
         let mut rows = stmt.query([]).context("Failed to query for all links")?;
         while let Some(row) = rows.next()? {
             let tags_sql: String = row.get(3)?;
-            links.push(ParsedLink::new(
+            links.push(CachedLink::new(
                 row.get(0)?,
                 row.get(1)?,
                 row.get(2)?,
@@ -81,7 +81,7 @@ impl Cache {
         Ok(links)
     }
 
-    pub fn query_unarchived(&self) -> anyhow::Result<Vec<ParsedLink>> {
+    pub fn query_unarchived(&self) -> anyhow::Result<Vec<CachedLink>> {
         let mut stmt = self
             .conn
             .prepare("SELECT url, title, source, tags, parsed_content FROM cache WHERE archived_at IS NULL")
@@ -95,7 +95,7 @@ impl Cache {
         let mut rows = stmt.query([]).context("Failed to query for all links")?;
         while let Some(row) = rows.next()? {
             let tags_sql: String = row.get(3)?;
-            links.push(ParsedLink::new(
+            links.push(CachedLink::new(
                 row.get(0)?,
                 row.get(1)?,
                 row.get(2)?,
@@ -106,7 +106,7 @@ impl Cache {
         Ok(links)
     }
 
-    pub fn insert(&self, link: &ParsedLink) -> anyhow::Result<()> {
+    pub fn insert(&self, link: &CachedLink) -> anyhow::Result<()> {
         let tags_sql = serde_json::to_string(&link.tags)?;
         self.conn.execute(
             "INSERT INTO cache (url, title, source, tags, parsed_content, archived_at) VALUES (:url, :title, :source, :tags, :parsed_content, NULL)",
