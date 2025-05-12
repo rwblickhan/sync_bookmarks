@@ -1,7 +1,7 @@
-use std::collections::HashSet;
+use std::{collections::HashSet, thread::current};
 
 use anyhow::Context;
-use pulldown_cmark::{Event, LinkType, Options, Parser, Tag};
+use pulldown_cmark::{Event, LinkType, Options, Parser, Tag, TagEnd};
 use walkdir::{DirEntry, WalkDir};
 
 use crate::models::{LinkSource, ObsidianLink, SerializedLink};
@@ -17,19 +17,36 @@ fn parse_markdown_links(entry: DirEntry) -> anyhow::Result<Vec<ObsidianLink>> {
     options.insert(Options::ENABLE_TASKLISTS);
     options.insert(Options::ENABLE_YAML_STYLE_METADATA_BLOCKS);
 
+    let mut current_link = None;
+    let mut current_link_title: Option<String> = None;
+
     let parser = Parser::new_ext(&contents, options);
     for event in parser {
-        if let Event::Start(Tag::Link {
-            link_type: LinkType::Inline,
-            dest_url,
-            title,
-            id: _,
-        }) = event
-        {
-            obsidian_links.push(ObsidianLink {
-                title: title.to_string(),
-                url: dest_url.to_string(),
-            });
+        match event {
+            Event::Start(Tag::Link {
+                link_type: LinkType::Inline,
+                dest_url,
+                title: _,
+                id: _,
+            }) => {
+                current_link = Some(dest_url.to_string());
+            }
+            Event::Text(text) | Event::Code(text) => {
+                if current_link.is_some() {
+                    current_link_title =
+                        Some(current_link_title.unwrap_or_default() + text.as_ref());
+                }
+            }
+            Event::End(TagEnd::Link) => {
+                if let Some(url) = current_link.clone() {
+                    if let Some(title) = current_link_title.clone() {
+                        current_link = None;
+                        current_link_title = None;
+                        obsidian_links.push(ObsidianLink { title, url });
+                    }
+                }
+            }
+            _ => {}
         }
     }
 
@@ -57,6 +74,7 @@ fn process_markdown_files(directory: &str) -> anyhow::Result<Vec<ObsidianLink>> 
 
 pub fn import_obsidian() -> anyhow::Result<()> {
     let obsidian_links = process_markdown_files("/Users/rwblickhan/Developer/notes")?;
+
     println!("Found {} Obsidian links", obsidian_links.len());
 
     let mut obsidian_urls = HashSet::new();
