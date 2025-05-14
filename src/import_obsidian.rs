@@ -50,10 +50,7 @@ fn parse_markdown_links(file_contents: &str) -> anyhow::Result<Vec<ObsidianLink>
         }
     }
 
-    let mut parsed_urls = HashSet::new();
-    for link in &obsidian_links {
-        parsed_urls.insert(link.url.clone());
-    }
+    let mut parsed_urls: HashSet<_> = obsidian_links.iter().map(|link| link.url.clone()).collect();
 
     // Find bare links
     let url_regex = Regex::new(r"https?:\/\/[^\s\)\]]*")?;
@@ -63,7 +60,7 @@ fn parse_markdown_links(file_contents: &str) -> anyhow::Result<Vec<ObsidianLink>
             continue;
         }
         obsidian_links.push(ObsidianLink {
-            title: "".to_string(),
+            title: url.clone(),
             url: url.clone(),
         });
         parsed_urls.insert(url);
@@ -97,10 +94,7 @@ pub fn import_obsidian() -> anyhow::Result<()> {
 
     println!("Found {} Obsidian links", obsidian_links.len());
 
-    let mut obsidian_urls = HashSet::new();
-    for link in &obsidian_links {
-        obsidian_urls.insert(link.url.clone());
-    }
+    let obsidian_urls: HashSet<_> = obsidian_links.iter().map(|link| link.url.clone()).collect();
 
     let mut serialized_links: Vec<SerializedLink> = match std::fs::read_to_string("links.json") {
         Ok(serialized_links_file_contents) => {
@@ -114,10 +108,10 @@ pub fn import_obsidian() -> anyhow::Result<()> {
         Err(_) => Vec::new(),
     };
 
-    let mut serialized_link_urls = HashSet::new();
-    for link in &serialized_links {
-        serialized_link_urls.insert(link.url.clone());
-    }
+    let serialized_link_urls: HashSet<_> = serialized_links
+        .iter()
+        .map(|link| link.url.clone())
+        .collect();
 
     let mut already_serialized_skipped = 0;
     let mut serialized = 0;
@@ -179,9 +173,9 @@ And another one: https://example.org/page?q=test
         let links = parse_markdown_links(file_contents)?;
 
         assert_eq!(links.len(), 2);
-        assert_eq!(links[0].title, "");
+        assert_eq!(links[0].title, "https://example.com");
         assert_eq!(links[0].url, "https://example.com");
-        assert_eq!(links[1].title, "");
+        assert_eq!(links[1].title, "https://example.org/page?q=test");
         assert_eq!(links[1].url, "https://example.org/page?q=test");
 
         Ok(())
@@ -199,9 +193,9 @@ And another one: (https://example.org/page?q=test)
         let links = parse_markdown_links(file_contents)?;
 
         assert_eq!(links.len(), 2);
-        assert_eq!(links[0].title, "");
+        assert_eq!(links[0].title, "https://example.com");
         assert_eq!(links[0].url, "https://example.com");
-        assert_eq!(links[1].title, "");
+        assert_eq!(links[1].title, "https://example.org/page?q=test");
         assert_eq!(links[1].url, "https://example.org/page?q=test");
 
         Ok(())

@@ -13,10 +13,10 @@ pub fn import_goodlinks() -> anyhow::Result<()> {
 
     println!("Found {} GoodLinks links", goodlinks_exported_links.len());
 
-    let mut goodlinks_exported_urls = HashSet::new();
-    for link in &goodlinks_exported_links {
-        goodlinks_exported_urls.insert(link.url.clone());
-    }
+    let goodlinks_exported_urls: HashSet<_> = goodlinks_exported_links
+        .iter()
+        .map(|link| link.url.clone())
+        .collect();
 
     let mut serialized_links: Vec<SerializedLink> = match std::fs::read_to_string("links.json") {
         Ok(serialized_links_file_contents) => {
@@ -31,10 +31,10 @@ pub fn import_goodlinks() -> anyhow::Result<()> {
         Err(_) => Vec::new(),
     };
 
-    let mut serialized_link_urls = HashSet::new();
-    for link in &serialized_links {
-        serialized_link_urls.insert(link.url.clone());
-    }
+    let serialized_link_urls: HashSet<_> = serialized_links
+        .iter()
+        .map(|link| link.url.clone())
+        .collect();
 
     let mut not_read_skipped = 0;
     let mut already_serialized_skipped = 0;
