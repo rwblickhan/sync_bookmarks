@@ -117,3 +117,64 @@ impl Cache {
         Ok(())
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use crate::models::LinkSource;
+
+    use super::*;
+
+    #[test]
+    fn test_insert_and_query() -> anyhow::Result<()> {
+        let cache = Cache::new(CacheType::Memory)?;
+        let link = CachedLink {
+            url: "https://example.com".to_string(),
+            title: "Example".to_string(),
+            source: LinkSource::GoodLinks,
+            tags: Vec::new(),
+            text_content: "Empty".to_string(),
+        };
+        cache.insert(&link)?;
+        let query_result = cache.query(&link.url)?.unwrap();
+        assert_eq!(link, query_result);
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_query_empty() -> anyhow::Result<()> {
+        let cache = Cache::new(CacheType::Memory)?;
+        let query_result = cache.query("https://example.com")?;
+        assert!(query_result.is_none());
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_insert_and_query_all() -> anyhow::Result<()> {
+        let cache = Cache::new(CacheType::Memory)?;
+        let link1 = CachedLink {
+            url: "https://example.com".to_string(),
+            title: "Example 1".to_string(),
+            source: LinkSource::GoodLinks,
+            tags: Vec::new(),
+            text_content: "Empty".to_string(),
+        };
+
+        let link2 = CachedLink {
+            url: "https://example.com/sub".to_string(),
+            title: "Example 2".to_string(),
+            source: LinkSource::Obsidian,
+            tags: Vec::new(),
+            text_content: "Empty".to_string(),
+        };
+        cache.insert(&link1)?;
+        cache.insert(&link2)?;
+        let query_results = cache.query_all()?;
+        assert_eq!(query_results.len(), 2);
+        assert_eq!(query_results[0], link1);
+        assert_eq!(query_results[1], link2);
+
+        Ok(())
+    }
+}

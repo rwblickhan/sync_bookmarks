@@ -3,7 +3,7 @@ use rusqlite::{
     ToSql,
 };
 
-#[derive(serde::Serialize, serde::Deserialize, PartialEq, Eq, Hash)]
+#[derive(serde::Serialize, serde::Deserialize, PartialEq, Eq, Hash, Debug)]
 pub enum LinkSource {
     GoodLinks,
     Obsidian,
@@ -28,6 +28,7 @@ impl ToSql for LinkSource {
     }
 }
 
+#[derive(PartialEq, Eq, Debug)]
 pub struct CachedLink {
     pub url: String,
     pub title: String,
