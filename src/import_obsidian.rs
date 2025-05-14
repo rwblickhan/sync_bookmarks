@@ -1,14 +1,13 @@
-use std::{collections::HashSet, thread::current};
-
 use anyhow::Context;
 use pulldown_cmark::{Event, LinkType, Options, Parser, Tag, TagEnd};
+use regex::Regex;
+use std::collections::HashSet;
 use walkdir::{DirEntry, WalkDir};
 
 use crate::models::{LinkSource, ObsidianLink, SerializedLink};
 
-fn parse_markdown_links(entry: DirEntry) -> anyhow::Result<Vec<ObsidianLink>> {
+fn parse_markdown_links(file_contents: &str) -> anyhow::Result<Vec<ObsidianLink>> {
     let mut obsidian_links = Vec::new();
-    let contents = std::fs::read_to_string(entry.path())?;
 
     let mut options = Options::empty();
     options.insert(Options::ENABLE_STRIKETHROUGH);
@@ -20,7 +19,8 @@ fn parse_markdown_links(entry: DirEntry) -> anyhow::Result<Vec<ObsidianLink>> {
     let mut current_link = None;
     let mut current_link_title: Option<String> = None;
 
-    let parser = Parser::new_ext(&contents, options);
+    // Find Markdown-formatted links
+    let parser = Parser::new_ext(file_contents, options);
     for event in parser {
         match event {
             Event::Start(Tag::Link {
@@ -50,6 +50,25 @@ fn parse_markdown_links(entry: DirEntry) -> anyhow::Result<Vec<ObsidianLink>> {
         }
     }
 
+    let mut parsed_urls = HashSet::new();
+    for link in &obsidian_links {
+        parsed_urls.insert(link.url.clone());
+    }
+
+    // Find bare links
+    let url_regex = Regex::new(r"https?:\/\/[^\s\)\]]*")?;
+    for capture in url_regex.captures_iter(file_contents) {
+        let url = capture[0].to_string();
+        if parsed_urls.contains(&url) {
+            continue;
+        }
+        obsidian_links.push(ObsidianLink {
+            title: "".to_string(),
+            url: url.clone(),
+        });
+        parsed_urls.insert(url);
+    }
+
     Ok(obsidian_links)
 }
 
@@ -66,7 +85,8 @@ fn process_markdown_files(directory: &str) -> anyhow::Result<Vec<ObsidianLink>> 
         .filter_map(Result::ok)
         .filter(is_markdown_file)
         .try_fold(Vec::new(), |mut acc, entry| {
-            let links = parse_markdown_links(entry)?;
+            let file_contents = std::fs::read_to_string(entry.path())?;
+            let links = parse_markdown_links(file_contents.as_ref())?;
             acc.extend(links);
             Ok(acc)
         })
@@ -121,4 +141,155 @@ pub fn import_obsidian() -> anyhow::Result<()> {
     println!("Serialized {serialized} Obsidian links; {already_serialized_skipped} links already serialized");
 
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_parse_markdown_links_only() -> anyhow::Result<()> {
+        let file_contents = r#"
+# Test Document
+
+This is a [test link](https://example.com).
+This is another [link with title](https://example.org/page).
+        "#;
+
+        let links = parse_markdown_links(file_contents)?;
+
+        assert_eq!(links.len(), 2);
+        assert_eq!(links[0].title, "test link");
+        assert_eq!(links[0].url, "https://example.com");
+        assert_eq!(links[1].title, "link with title");
+        assert_eq!(links[1].url, "https://example.org/page");
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_parse_bare_urls_only() -> anyhow::Result<()> {
+        let file_contents = r#"
+# Test Document
+
+This document has https://example.com as a bare URL.
+And another one: https://example.org/page?q=test
+        "#;
+
+        let links = parse_markdown_links(file_contents)?;
+
+        assert_eq!(links.len(), 2);
+        assert_eq!(links[0].title, "");
+        assert_eq!(links[0].url, "https://example.com");
+        assert_eq!(links[1].title, "");
+        assert_eq!(links[1].url, "https://example.org/page?q=test");
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_parse_bare_urls_in_parens() -> anyhow::Result<()> {
+        let file_contents = r#"
+# Test Document
+
+This document has (https://example.com) as a bare URL.
+And another one: (https://example.org/page?q=test)
+        "#;
+
+        let links = parse_markdown_links(file_contents)?;
+
+        assert_eq!(links.len(), 2);
+        assert_eq!(links[0].title, "");
+        assert_eq!(links[0].url, "https://example.com");
+        assert_eq!(links[1].title, "");
+        assert_eq!(links[1].url, "https://example.org/page?q=test");
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_parse_mixed_links() -> anyhow::Result<()> {
+        let file_contents = r#"
+# Test Document with Mixed Links
+
+This is a [Markdown link](https://example.com).
+This is a bare URL: https://example.org/page
+This is a duplicate bare URL: https://example.com (should be ignored)
+        "#;
+
+        let links = parse_markdown_links(file_contents)?;
+
+        assert_eq!(links.len(), 2);
+
+        let urls: HashSet<String> = links.iter().map(|link| link.url.clone()).collect();
+        assert_eq!(urls.len(), 2);
+        assert!(urls.contains("https://example.com"));
+        assert!(urls.contains("https://example.org/page"));
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_complex_url_patterns() -> anyhow::Result<()> {
+        let file_contents = r#"
+# Complex URL Patterns
+
+Regular HTTP: http://example.com
+HTTPS with path: https://api.example.org/v1/data
+With query params: https://example.com/search?q=test&page=1
+With anchor: https://docs.example.com/guide#section-3
+With port: https://example.com:8080/app
+        "#;
+
+        let links = parse_markdown_links(file_contents)?;
+
+        assert_eq!(links.len(), 5);
+
+        let urls: HashSet<_> = links.iter().map(|link| link.url.clone()).collect();
+        assert!(urls.contains("http://example.com"));
+        assert!(urls.contains("https://api.example.org/v1/data"));
+        assert!(urls.contains("https://example.com/search?q=test&page=1"));
+        assert!(urls.contains("https://docs.example.com/guide#section-3"));
+        assert!(urls.contains("https://example.com:8080/app"));
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_no_links() -> anyhow::Result<()> {
+        let file_contents = r#"
+# Document with No Links
+
+This document doesn't contain any links.
+Just plain text content.
+        "#;
+
+        let links = parse_markdown_links(file_contents)?;
+
+        assert_eq!(links.len(), 0);
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_markdown_links_with_special_characters() -> anyhow::Result<()> {
+        let file_contents = r#"
+# Document with Special Characters in Links
+
+[Link with query params](https://example.com/search?name=John+Doe&age=25)
+[Link with unicode](https://example.com/café)
+        "#;
+
+        let links = parse_markdown_links(file_contents)?;
+
+        assert_eq!(links.len(), 2);
+        assert!(links
+            .iter()
+            .any(|link| link.url == "https://example.com/search?name=John+Doe&age=25"));
+        assert!(links
+            .iter()
+            .any(|link| link.url == "https://example.com/café"));
+
+        Ok(())
+    }
 }
