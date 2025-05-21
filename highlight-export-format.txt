@@ -1,0 +1,19 @@
+---
+tags: []
+---
+{{#highlights}}
+{{content_md | blockquote}}
+{{#note}}
+
+{{note}}
+{{/note}}
+{{^is_last}}
+
+---
+
+{{/is_last}}
+{{/highlights}}
+
+## References
+
+- [{{title}}]({{url}})

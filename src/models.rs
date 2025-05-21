@@ -2,6 +2,7 @@ use rusqlite::{
     types::{FromSql, FromSqlError, ToSqlOutput, Value, ValueRef},
     ToSql,
 };
+use serde::Serialize;
 
 #[derive(serde::Serialize, serde::Deserialize, PartialEq, Eq, Hash, Debug)]
 pub enum LinkSource {
@@ -97,4 +98,9 @@ pub struct GoodLinksLink {
 pub struct ObsidianLink {
     pub title: String,
     pub url: String,
+}
+
+pub struct Article {
+    pub title: String,
+    pub text_content: String,
 }
