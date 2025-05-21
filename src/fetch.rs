@@ -16,6 +16,8 @@ const BANNED_HOSTS: &[&str] = &[
     "society.robinsloan.com",
     "esoteric.codes",
     "l.bulletin.com",
+    "probmods.org",
+    "example.com",
 ];
 
 pub fn fetch_to_cache() -> anyhow::Result<()> {
