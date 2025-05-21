@@ -53,7 +53,8 @@ fn parse_markdown_links(file_contents: &str) -> anyhow::Result<Vec<ObsidianLink>
     let mut parsed_urls: HashSet<_> = obsidian_links.iter().map(|link| link.url.clone()).collect();
 
     // Find bare links
-    let url_regex = Regex::new(r"https?:\/\/[^\s\)\]]*")?;
+    let url_regex = Regex::new(r"https?://(?:[^\s\)\]]*\([^\s\)\]]*\)[^\s\)\]]*|[^\s\)\]]*)")?;
+
     for capture in url_regex.captures_iter(file_contents) {
         let url = capture[0].to_string();
         if parsed_urls.contains(&url) {
