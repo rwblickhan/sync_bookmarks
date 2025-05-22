@@ -27545,7 +27545,7 @@
   },
   {
     "url": "https://r.jina.ai/https://simonwillison.net/2024/Jun/16/jina-ai-reader/",
-    "title": "",
+    "title": "https://r.jina.ai/https://simonwillison.net/2024/Jun/16/jina-ai-reader/",
     "tags": [],
     "source": "Obsidian"
   },
@@ -28973,7 +28973,7 @@
   },
   {
     "url": "https://developer.mozilla.org/en-US/docs/Glossary/Base64#the_unicode_problem.",
-    "title": "",
+    "title": "https://developer.mozilla.org/en-US/docs/Glossary/Base64#the_unicode_problem.",
     "tags": [],
     "source": "Obsidian"
   },
@@ -29754,6 +29754,12 @@
   {
     "url": "https://simonwillison.net/2024/Jun/4/a-tip-from-neal-stephenson/",
     "title": "A tip from Neal Stephenson",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://jsonlines.org/",
+    "title": "JSON Lines",
     "tags": [],
     "source": "Obsidian"
   },
@@ -30713,7 +30719,7 @@
   },
   {
     "url": "https://cdn.substack.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fab0e315a-94de-45f8-9ebb-b743405095a0_1264x698.png",
-    "title": "",
+    "title": "https://cdn.substack.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fab0e315a-94de-45f8-9ebb-b743405095a0_1264x698.png",
     "tags": [],
     "source": "Obsidian"
   },
@@ -31787,7 +31793,7 @@
   },
   {
     "url": "https://digitalfolklore.fm/episodes/s1e1",
-    "title": "",
+    "title": "https://digitalfolklore.fm/episodes/s1e1",
     "tags": [],
     "source": "Obsidian"
   },
@@ -32309,73 +32315,73 @@
   },
   {
     "url": "https://www.deeplearningbook.org/",
-    "title": "",
+    "title": "https://www.deeplearningbook.org/",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "http://aima.cs.berkeley.edu/",
-    "title": "",
+    "title": "http://aima.cs.berkeley.edu/",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "https://www.cs.ubc.ca/~murphyk/MLbook/",
-    "title": "",
+    "title": "https://www.cs.ubc.ca/~murphyk/MLbook/",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "http://www.inference.org.uk/mackay/itila/book.html",
-    "title": "",
+    "title": "http://www.inference.org.uk/mackay/itila/book.html",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "http://incompleteideas.net/book/the-book.html",
-    "title": "",
+    "title": "http://incompleteideas.net/book/the-book.html",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "https://github.com/nyu-dl/NLP_DL_Lecture_Note/blob/master/lecture_note.pdf",
-    "title": "",
+    "title": "https://github.com/nyu-dl/NLP_DL_Lecture_Note/blob/master/lecture_note.pdf",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "https://www.amazon.com/Language-Processing-Synthesis-Lectures-Technologies/dp/1627052984",
-    "title": "",
+    "title": "https://www.amazon.com/Language-Processing-Synthesis-Lectures-Technologies/dp/1627052984",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "https://arxiv.org/abs/1510.00726",
-    "title": "",
+    "title": "https://arxiv.org/abs/1510.00726",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "https://github.com/jacobeisenstein/gt-nlp-class/blob/master/notes/eisenstein-nlp-notes.pdf",
-    "title": "",
+    "title": "https://github.com/jacobeisenstein/gt-nlp-class/blob/master/notes/eisenstein-nlp-notes.pdf",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "https://courses.edx.org/courses/course-v1:MITx+6.008.1x+3T2016/course/",
-    "title": "",
+    "title": "https://courses.edx.org/courses/course-v1:MITx+6.008.1x+3T2016/course/",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "https://www.coursera.org/specializations/probabilistic-graphical-models",
-    "title": "",
+    "title": "https://www.coursera.org/specializations/probabilistic-graphical-models",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "https://www.oreilly.com/library/view/natural-language-processing/9781098136789/",
-    "title": "",
+    "title": "https://www.oreilly.com/library/view/natural-language-processing/9781098136789/",
     "tags": [],
     "source": "Obsidian"
   },
@@ -32436,6 +32442,12 @@
   {
     "url": "https://davidepstein.substack.com/p/my-personal-attention-span-takeaways?publication_id=1024339&post_id=141861510&isFreemail=true&r=p8s&triedRedirect=true",
     "title": "(23) My Personal \"Attention Span\" Takeaways - by David Epstein",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.atvbt.com/kses-for-media/",
+    "title": "VERITAS Subsidies For Media",
     "tags": [],
     "source": "Obsidian"
   },
@@ -33136,48 +33148,6 @@
     "source": "Obsidian"
   },
   {
-    "url": "https://t.co/oE0lfFUoa9",
-    "title": "https://cs.princeton.edu/~appel/modern/",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://t.co/XnNn59QtDR",
-    "title": "https://elsevier.com/books/programming-language-pragmatics/scott/978-0-12-410409-9…",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://t.co/dlxPJ3LNGl",
-    "title": "https://cis.upenn.edu/~bcpierce/tapl/",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://t.co/joKCSzldEf",
-    "title": "http://cs.cmu.edu/~rwh/pfpl.html",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://t.co/nXYl9jim23",
-    "title": "https://cs.kent.ac.uk/people/staff/rej/gcbook/…",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://t.co/5HdlHJ6cdh",
-    "title": "https://linker.iecc.com",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://t.co/6Rlzrlekch",
-    "title": "https://goodreads.com/book/show/887908.Advanced_Compiler_Design_and_Implementation…",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
     "url": "https://twitter.com/graydon_pub/status/1039615569132118016?utm_source=pocket_mylist",
     "title": "Graydon Hoare on Twitter",
     "tags": [],
@@ -33185,43 +33155,43 @@
   },
   {
     "url": "https://cs.princeton.edu/~appel/modern/",
-    "title": "",
+    "title": "https://cs.princeton.edu/~appel/modern/",
     "tags": [],
     "source": "Obsidian"
   },
   {
-    "url": "https://elsevier.com/books/programming-language-pragmatics/scott/978-0-12-410409-9…",
-    "title": "",
+    "url": "https://shop.elsevier.com/books/programming-language-pragmatics/scott/978-0-323-99966-3",
+    "title": "https://shop.elsevier.com/books/programming-language-pragmatics/scott/978-0-323-99966-3",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "https://cis.upenn.edu/~bcpierce/tapl/",
-    "title": "",
+    "title": "https://cis.upenn.edu/~bcpierce/tapl/",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "http://cs.cmu.edu/~rwh/pfpl.html",
-    "title": "",
+    "title": "http://cs.cmu.edu/~rwh/pfpl.html",
     "tags": [],
     "source": "Obsidian"
   },
   {
-    "url": "https://cs.kent.ac.uk/people/staff/rej/gcbook/…",
-    "title": "",
+    "url": "https://gchandbook.org",
+    "title": "https://gchandbook.org",
     "tags": [],
     "source": "Obsidian"
   },
   {
     "url": "https://linker.iecc.com",
-    "title": "",
+    "title": "https://linker.iecc.com",
     "tags": [],
     "source": "Obsidian"
   },
   {
-    "url": "https://goodreads.com/book/show/887908.Advanced_Compiler_Design_and_Implementation…",
-    "title": "",
+    "url": "https://www.goodreads.com/book/show/887908.Advanced_Compiler_Design_and_Implementation",
+    "title": "https://www.goodreads.com/book/show/887908.Advanced_Compiler_Design_and_Implementation",
     "tags": [],
     "source": "Obsidian"
   },
@@ -34727,7 +34697,7 @@
   },
   {
     "url": "https://URLなんて読みやすいとは限りませんよ.com",
-    "title": "",
+    "title": "https://URLなんて読みやすいとは限りませんよ.com",
     "tags": [],
     "source": "Obsidian"
   },
@@ -35525,7 +35495,7 @@
   },
   {
     "url": "https://jojozhuang.github.io",
-    "title": "",
+    "title": "https://jojozhuang.github.io",
     "tags": [],
     "source": "Obsidian"
   },
@@ -35556,6 +35526,12 @@
   {
     "url": "https://anchor.fm/history-of-perisa/episodes/60-Given-Against-The-Demons-e19a76u",
     "title": "60: Given Against The Demons by History of Persia",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/h90rEkbx95w?si=u55IFnbefrqK_vp_",
+    "title": "\"I fixed my lactose intolerance -- by chugging ALL the lactose\"",
     "tags": [],
     "source": "Obsidian"
   },
@@ -35885,7 +35861,7 @@
   },
   {
     "url": "https://example.com\"",
-    "title": "",
+    "title": "https://example.com\"",
     "tags": [],
     "source": "Obsidian"
   },
@@ -36340,6 +36316,12 @@
     "source": "Obsidian"
   },
   {
+    "url": "https://resobscura.substack.com/p/ai-makes-the-humanities-more-important?publication_id=1583525&post_id=162236863&isFreemail=true&r=p8s&triedRedirect=true",
+    "title": "AI makes the humanities more important, but also a lot weirder",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
     "url": "https://tedium.co/2024/05/17/google-web-search-make-default/",
     "title": "How I Made Google’s “Web” View My Default Search",
     "tags": [],
@@ -36347,7 +36329,7 @@
   },
   {
     "url": "https://www.google.com/search?q=%s&udm=14`,",
-    "title": "",
+    "title": "https://www.google.com/search?q=%s&udm=14`,",
     "tags": [],
     "source": "Obsidian"
   },
@@ -37222,6 +37204,12 @@
     "source": "Obsidian"
   },
   {
+    "url": "https://github.com/BurntSushi/jiff",
+    "title": "jiff",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
     "url": "https://docs.rs/miette/latest/miette/",
     "title": "miette",
     "tags": [],
@@ -37409,7 +37397,7 @@
   },
   {
     "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Glacial_Tarn_Formation_EN.svg",
-    "title": "",
+    "title": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Glacial_Tarn_Formation_EN.svg",
     "tags": [],
     "source": "Obsidian"
   },
@@ -37433,13 +37421,7 @@
   },
   {
     "url": "https://twitter.com/patriciamou_/status/1690014725449375747?utm_source=substack&utm_medium=email",
-    "title": "Patricia Mou on Twitter: \"Richard Feynman's love letter to his dead wife (1946) showing me relationship goals: “You, dead. Are so much better than anyone alive. I’ve met many nice girls & don’t want to remain alone, but in 3 meetings they all seem ashes to me. You only are left to me. You are real.” https://t.co/cod8zbe4Y5\" / X",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://t.co/cod8zbe4Y5\"",
-    "title": "",
+    "title": "Patricia Mou on Twitter: \"Richard Feynman's love letter to his dead wife (1946) showing me relationship goals: “You, dead. Are so much better than anyone alive. I’ve met many nice girls & don’t want to remain alone, but in 3 meetings they all seem ashes to me. You only are left to me. You are real.”",
     "tags": [],
     "source": "Obsidian"
   },
@@ -37517,7 +37499,7 @@
   },
   {
     "url": "https://simonwillison.net/2025/Apr/21/ai-assisted-search/",
-    "title": "",
+    "title": "https://simonwillison.net/2025/Apr/21/ai-assisted-search/",
     "tags": [],
     "source": "Obsidian"
   },
@@ -38290,6 +38272,12 @@
     "source": "Obsidian"
   },
   {
+    "url": "https://github.com/BurntSushi/biff",
+    "title": "biff",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
     "url": "https://github.com/kurtbuilds/checkexec",
     "title": "checkexec",
     "tags": [],
@@ -38424,6 +38412,12 @@
   {
     "url": "https://github.com/pkgxdev/pkgx",
     "title": "pkgx",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://github.com/crhuber/kelp",
+    "title": "kelp",
     "tags": [],
     "source": "Obsidian"
   },
@@ -38627,7 +38621,7 @@
   },
   {
     "url": "https://example.com/calendar.ics\">",
-    "title": "",
+    "title": "https://example.com/calendar.ics\">",
     "tags": [],
     "source": "Obsidian"
   },
@@ -38681,7 +38675,7 @@
   },
   {
     "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Arnold_Böcklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg",
-    "title": "",
+    "title": "https://upload.wikimedia.org/wikipedia/commons/6/65/Arnold_Böcklin_-_Die_Toteninsel_III_%28Alte_Nationalgalerie%2C_Berlin%29.jpg",
     "tags": [],
     "source": "Obsidian"
   },
@@ -39406,18 +39400,6 @@
     "source": "Obsidian"
   },
   {
-    "url": "https://t.co/cYdidmBEtH",
-    "title": "https://sharedphysics.com/what-should-be-on-the-roadmap/…",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://t.co/JxvoFRZrvb",
-    "title": "https://msiliski.medium.com/good-goals-249db6df265d…",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
     "url": "https://msiliski.medium.com/product-planning-a8c18d4018fa",
     "title": "\"Product Planning\"",
     "tags": [],
@@ -39430,14 +39412,14 @@
     "source": "Obsidian"
   },
   {
-    "url": "https://sharedphysics.com/what-should-be-on-the-roadmap/…",
-    "title": "",
+    "url": "https://sharedphysics.com/what-should-be-on-the-roadmap/",
+    "title": "https://sharedphysics.com/what-should-be-on-the-roadmap/",
     "tags": [],
     "source": "Obsidian"
   },
   {
-    "url": "https://msiliski.medium.com/good-goals-249db6df265d…",
-    "title": "",
+    "url": "https://msiliski.medium.com/good-goals-249db6df265d",
+    "title": "https://msiliski.medium.com/good-goals-249db6df265d",
     "tags": [],
     "source": "Obsidian"
   },
@@ -40181,7 +40163,7 @@
   },
   {
     "url": "https://antonz.org/sqlite-generated-columns/",
-    "title": "",
+    "title": "https://antonz.org/sqlite-generated-columns/",
     "tags": [],
     "source": "Obsidian"
   },
@@ -40205,7 +40187,7 @@
   },
   {
     "url": "https://adrianroselli.com/2020/01/fixed-table-headers.html",
-    "title": "",
+    "title": "https://adrianroselli.com/2020/01/fixed-table-headers.html",
     "tags": [],
     "source": "Obsidian"
   },
@@ -40362,6 +40344,12 @@
   {
     "url": "https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l",
     "title": "Table CSS: Creating beautiful HTML tables with CSS - DEV Community",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://circlejerk.blog/about",
+    "title": "Generic White Middle-Aged Male Tech Blogger Content Generator",
     "tags": [],
     "source": "Obsidian"
   },
@@ -40918,6 +40906,12 @@
     "source": "Obsidian"
   },
   {
+    "url": "https://elijahpotter.dev/articles/bypassing_hallucinations_in_llms",
+    "title": "Bypassing Hallucinations in Llms",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
     "url": "https://bam.kalzumeus.com/archive/accounting-for-saas-and-swords/",
     "title": "Accounting for SaaS and swords",
     "tags": [],
@@ -41110,12 +41104,6 @@
     "source": "Obsidian"
   },
   {
-    "url": "https://sf.eater.com/2024/5/9/24152787/merchant-roots-new-location-soma",
-    "title": "Merchant Roots",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
     "url": "https://www.sfchronicle.com/food/restaurants/article/smokin-ds-barbecue-sf-19549345.php?sid=638c256380383cf2790df08a&ss=P&st_rid=78c4e0e7-55f1-45ff-918e-16df92e506dd",
     "title": "Smokin' D's",
     "tags": [],
@@ -41286,6 +41274,12 @@
   {
     "url": "https://www.holboxla.com/#/",
     "title": "Holbox",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://vancouversun.com/news/siegels-bagels-35-anniversary-vancouver-montreal",
+    "title": "Siegel's Bagels",
     "tags": [],
     "source": "Obsidian"
   },
@@ -41675,7 +41669,7 @@
   },
   {
     "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Ogi_Shirakawa-gō%2C_Gifu%2C_Japan.jpg",
-    "title": "",
+    "title": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Ogi_Shirakawa-gō%2C_Gifu%2C_Japan.jpg",
     "tags": [],
     "source": "Obsidian"
   },
@@ -41890,6 +41884,12 @@
     "source": "Obsidian"
   },
   {
+    "url": "https://rwblickhan.org/misc/small-things/#cuisipro-box-grater",
+    "title": "Cuisipro box grater",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
     "url": "https://blog.kellybrazil.com/2021/12/03/tips-on-adding-json-output-to-your-cli-app/",
     "title": "Tips on Adding JSON Output to Your CLI App - Brazil's Blog",
     "tags": [],
@@ -41994,12 +41994,6 @@
   {
     "url": "https://shop.bingomerch.com/collections/josh-cohen/products/josh-cohen-radiohead-for-solo-piano-songbooks-volume-i-and-ii",
     "title": "Radiohead for Solo Piano",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://usstore.tenga.co/products/tar-002",
-    "title": "Tenga Arte Drape",
     "tags": [],
     "source": "Obsidian"
   },
@@ -42431,7 +42425,7 @@
   },
   {
     "url": "https://duckduckgo.com\">",
-    "title": "",
+    "title": "https://duckduckgo.com\">",
     "tags": [],
     "source": "Obsidian"
   },
@@ -42856,12 +42850,6 @@
     "source": "Obsidian"
   },
   {
-    "url": "https://t.co/o0t5Ta1CvQ\"",
-    "title": "",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
     "url": "https://www.pcgamer.com/steam-deck-emulation-installation/",
     "title": "The Steam Deck is already the emulation system of my dreams | PC Gamer",
     "tags": [],
@@ -43235,7 +43223,7 @@
   },
   {
     "url": "https://www.google.com/images/srpr/logo3w.png\"",
-    "title": "",
+    "title": "https://www.google.com/images/srpr/logo3w.png\"",
     "tags": [],
     "source": "Obsidian"
   },
@@ -44634,72 +44622,6 @@
   {
     "url": "https://www.reddit.com/r/AskHistorians/comments/grxulb/comment/fs86ku1/?s=8",
     "title": "r/AskHistorians - Comment by u/KwesiStyle on ”Are there African dragon legends?”",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://jsonlines.org/",
-    "title": "JSON Lines",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://www.atvbt.com/kses-for-media/",
-    "title": "VERITAS Subsidies For Media",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://youtu.be/h90rEkbx95w?si=u55IFnbefrqK_vp_",
-    "title": "\"I fixed my lactose intolerance -- by chugging ALL the lactose\"",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://resobscura.substack.com/p/ai-makes-the-humanities-more-important?publication_id=1583525&post_id=162236863&isFreemail=true&r=p8s&triedRedirect=true",
-    "title": "AI makes the humanities more important, but also a lot weirder",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://github.com/BurntSushi/jiff",
-    "title": "jiff",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://github.com/BurntSushi/biff",
-    "title": "biff",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://github.com/crhuber/kelp",
-    "title": "kelp",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://circlejerk.blog/about",
-    "title": "Generic White Middle-Aged Male Tech Blogger Content Generator",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://elijahpotter.dev/articles/bypassing_hallucinations_in_llms",
-    "title": "Bypassing Hallucinations in Llms",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://vancouversun.com/news/siegels-bagels-35-anniversary-vancouver-montreal",
-    "title": "Siegel's Bagels",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://rwblickhan.org/misc/small-things/#cuisipro-box-grater",
-    "title": "Cuisipro box grater",
     "tags": [],
     "source": "Obsidian"
   }

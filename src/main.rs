@@ -18,10 +18,10 @@ fn main() -> anyhow::Result<()> {
 
     match cli.command {
         Commands::Raindrop => export_raindrop(),
-        Commands::Import => {
+        Commands::Import { verbose } => {
             import_goodlinks()?;
             import_obsidian()?;
-            fetch_to_cache()?;
+            fetch_to_cache(verbose)?;
             Ok(())
         }
     }

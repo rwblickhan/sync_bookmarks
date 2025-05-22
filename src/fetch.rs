@@ -18,9 +18,10 @@ const BANNED_HOSTS: &[&str] = &[
     "l.bulletin.com",
     "probmods.org",
     "example.com",
+    "xn--url-u63b6dn8esao8c4jh9d2c1a0lk29262bmhrb.com",
 ];
 
-pub fn fetch_to_cache() -> anyhow::Result<()> {
+pub fn fetch_to_cache(verbose: bool) -> anyhow::Result<()> {
     let cache = Cache::new(CacheType::Disk("cache.db".to_owned()))?;
 
     let serialized_links: Vec<SerializedLink> = serde_json::from_str::<Vec<SerializedLink>>(
@@ -50,7 +51,9 @@ pub fn fetch_to_cache() -> anyhow::Result<()> {
                 let product = match extractor::scrape(&link.url) {
                     Ok(product) => product,
                     Err(e) => {
-                        println!("Failed to parse link {}: {e}", link.url);
+                        if verbose {
+                            println!("Failed to parse link {}: {e}", link.url);
+                        }
                         continue;
                     }
                 };

@@ -10,5 +10,8 @@ pub struct Cli {
 #[derive(Subcommand)]
 pub enum Commands {
     Raindrop,
-    Import,
+    Import {
+        #[arg(short, long)]
+        verbose: bool,
+    },
 }
