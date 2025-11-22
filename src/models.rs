@@ -91,6 +91,7 @@ pub struct GoodLinksLink {
     #[serde(rename = "readAt")]
     pub read_at: Option<f32>,
     pub title: Option<String>,
+    #[serde(default)]
     pub tags: Vec<String>,
     pub url: String,
 }
