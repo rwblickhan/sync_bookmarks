@@ -31426,12 +31426,6 @@
     "source": "Obsidian"
   },
   {
-    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API",
-    "title": "Intersection Observer API - Web APIs | MDN",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
     "url": "https://effectindex.com/effects",
     "title": "Subjective Effect Index - Effect Index",
     "tags": [],
@@ -34662,12 +34656,6 @@
   {
     "url": "https://simonwillison.net/2023/May/18/cli-tools-for-llms/",
     "title": "llm, ttok and strip-tags—CLI tools for working with ChatGPT and other LLMs",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://langchain.readthedocs.io/en/latest/",
-    "title": "Welcome to LangChain — 🦜🔗 LangChain 0.0.115",
     "tags": [],
     "source": "Obsidian"
   },
@@ -53636,6 +53624,344 @@
   {
     "url": "https://hellacocktail.co/",
     "title": "Hella Cocktail Co",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seangoedecke.com/invalid-states/",
+    "title": "'Make invalid states unrepresentable' considered harmful",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://arstechnica.com/gadgets/2025/09/jef-raskins-cul-de-sac-and-the-quest-for-the-humane-computer/",
+    "title": "Jef Raskin’s cul-de-sac and the quest for the humane computer",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.wired.com/story/the-pelvic-floor-is-a-problem/?ueid=c7167216f83a4f9241be67d46c86c056&utm_source=Sailthru&utm_medium=email&utm_campaign=2025-12-06%20Installer%20108&utm_term=Installer",
+    "title": "The Pelvic Floor Is a Problem",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://talesoftimesforgotten.com/2025/12/07/ancient-and-medieval-people-believed-that-unicorns-were-real-and-murderous/",
+    "title": "Ancient and Medieval People Believed that Unicorns Were Real—and Murderous",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://type.today/en/journal/spaces",
+    "title": "Manual: Spaces",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://kottke.org/25/12/a-charlie-brown-christmas-live",
+    "title": "A Charlie Brown Christmas, Live",
+    "tags": [
+      "music"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://kottke.org/25/12/0047992-i-hate-how-good-this",
+    "title": "I hate how good this is: Radiohead sings Santa Claus Is Comi...",
+    "tags": [
+      "music"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=tJ4X6FsLn6Y",
+    "title": "The Ten Best Games of 2025",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=lVhzVaeRLF0",
+    "title": "Jacob Geller's Other Favorite Things From 2025",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=_3FY3DwIvjI",
+    "title": "Director's Commentary: Silksong and the Biblical Apocalypse",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://countercraft.substack.com/p/the-best-books-i-read-in-2025-that?publication_id=284412&post_id=181178518&isFreemail=true&r=p8s&triedRedirect=true",
+    "title": "The Best Books I Read in 2025 (That Weren't Published in 2025)",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=LZnAQ-PWQdg",
+    "title": "Want To Know Why Coffee Makes You Poop?",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://occasionalreview.substack.com/p/in-the-court-of-hillary-clinton?publication_id=1994754&post_id=181488945&isFreemail=true&r=p8s&triedRedirect=true",
+    "title": "In the Court of Hillary Clinton",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=iNKqWaimAc0",
+    "title": "Empathy for the Inanimate",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://v5.chriskrycho.com/notes/pop-overs/",
+    "title": "Pop-Overs — Sympolymathesy, by Chris Krycho",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://robinrendle.com/notes/So-Many-Websites/",
+    "title": "So Many Websites",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=e4dYGdjgsz8",
+    "title": "The Second (or perhaps 3rd) Most Important Technology",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://animationobsessive.substack.com/p/satoshi-kons-impossibly-real-tokyo?publication_id=274055&post_id=181536533&isFreemail=true&r=p8s&triedRedirect=true&utm_source=substack&utm_medium=email",
+    "title": "Satoshi Kon's Impossibly Real Tokyo",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.rogerebert.com/reviews/the-bucket-list-2008",
+    "title": "O death, where is thy sting-a-ling-a-ling? movie review (2008) | Roger Ebert",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=QjPx09ZY3ls",
+    "title": "Virginia Postrel | The Fabric of Civilization | Talks at Google",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.atvbt.com/intercity-uber/",
+    "title": "Intercity Uber",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://paulkrugman.substack.com/p/talking-with-adam-tooze#media-b0274693-56ae-42ad-9700-b230787669dd",
+    "title": "Talking With Adam Tooze",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://occasionalreview.substack.com/p/trump-in-trouble?publication_id=1994754&post_id=181753674&isFreemail=true&r=p8s&triedRedirect=true",
+    "title": "Trump in Trouble",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=_RxvX1bUyzQ",
+    "title": "this tiny $100 pc replaced every streaming service",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=TIfE49VkdJU",
+    "title": "Florence + The Machine - Silver Springs (Official Audio) [Fleetwood Mac Cover]",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html",
+    "title": "AI will make formal verification go mainstream — Martin Kleppmann’s blog",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://vimeo.com/1146660687?fl=ip&fe=ec",
+    "title": "Episode 2 – What Frequency Really Means",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.atvbt.com/six-thoughts-about-poetry/",
+    "title": "Six Thoughts About Poetry",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://mindless-ones.ghost.io/stronger-loving-world/",
+    "title": "Stronger loving world",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.natemeyvis.com/what-happened-to-quantified-self/",
+    "title": "What happened to Quantified Self?",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.natemeyvis.com/dutch-fiction/",
+    "title": "Dutch fiction",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=0tfQ7K-ec_g",
+    "title": "The Soup Kitchen is Open",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://mariakonnikova.substack.com/p/the-man-who-mistook-his-imagination",
+    "title": "The man who mistook his imagination for the truth",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://web.law.duke.edu/cspd/publicdomainday/2026/",
+    "title": "Public Domain Day 2026 | Duke University School of Law",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://standardebooks.org/blog/philosophys-cold-comfort",
+    "title": "Philosophy’s Cold Comfort",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.andrewliptak.com/alix-harrow-the-everlasting-fantasy-time-travel-book-review/?ref=transfer-orbit-newsletter",
+    "title": "Origin stories",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://craigmod.com/ridgeline/217/",
+    "title": "Full Days and the Long Walk",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.understandingai.org/p/waymo-and-teslas-self-driving-systems?publication_id=1501429&post_id=181932328&isFreemail=true&r=p8s&triedRedirect=true&utm_source=substack&utm_medium=email",
+    "title": "Waymo and Tesla’s self-driving systems are more similar than people think",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://systemstack.dev/2025/09/humane-computing/",
+    "title": "Apples, Trees, and Quasimodes - System Stack",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://pleasejusttryhtmx.com/",
+    "title": "Please Just Fucking Try HTMX",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.bitsaboutmoney.com/archive/gift-card-accountability-sink/",
+    "title": "The gift card accountability sink",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://v5.chriskrycho.com/notes/some-of-us-actually-like-coding/",
+    "title": "Some of Us Actually Like Coding — Sympolymathesy, by Chris Krycho",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://partiful.com/e/n17W3GllMUq6e9qiYCD0",
+    "title": "Tokyo Godfathers",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://beej.us/guide/bglcs/html/split/",
+    "title": "Beej's Guide to Learning Computer Science",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.bryanvannorden.com/suggestions-for-further-reading",
+    "title": "Bryan Van Norden's Multicultural Philosophy Reading List",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.futilitycloset.com/2025/12/10/onlooker/",
+    "title": "Onlooker",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://poets.org/poem/failing-and-flying",
+    "title": "Failing and Flying",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://arborium.bearcove.eu/#rust",
+    "title": "arborium",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://github.com/cobalt-org/liquid-rust",
+    "title": "liquid-rust",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.nytimes.com/wirecutter/reviews/best-travel-pillow/",
+    "title": "Travel pillow",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.wired.com/story/the-pelvic-floor-is-a-problem/?ueid=c7167216f83a4f9241be67d46c86c056",
+    "title": "The Pelvic Floor Is a Problem",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://alexwlchan.net/2025/palmyrene-alphabet/?ref=rss",
+    "title": "The palm tree that led to Palmyra",
     "tags": [],
     "source": "Obsidian"
   }
