@@ -46164,12 +46164,6 @@
     "source": "Obsidian"
   },
   {
-    "url": "https://en.kujten.com",
-    "title": "Kujten cashmere",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
     "url": "https://interconnected.org/home/2025/06/16/hush",
     "title": "The video calls section in cafes is the new smoking section",
     "tags": [],
@@ -56626,12 +56620,6 @@
     "source": "Obsidian"
   },
   {
-    "url": "https://shop.kingarthurbaking.com/items/saf-red-instant-yeast",
-    "title": "SAF Red Instant Yeast",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
     "url": "https://www.futilitycloset.com/2026/02/03/to-the-life-2/",
     "title": "To the Life",
     "tags": [],
@@ -57122,6 +57110,568 @@
   {
     "url": "https://www.futilitycloset.com/2026/02/19/decalogue-3/",
     "title": "Decalogue",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Jv_HdgT9q0s",
+    "title": "The Modern Goddess - Ronald Hutton",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://alexwennerberg.com/blog/2026-01-25-slop.html",
+    "title": "AI code and software craft",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.patreon.com/posts/getting-salty-it-148772615?utm_source=KieronGillen&utm_medium=email&utm_campaign=358-my-brain-is-an-ineffective-foam-sprayer",
+    "title": "GETTING SALTY ABOUT IT: DESIGNING THE NEXT RESISTANCE GAME | Grant Howitt",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=b7r8WTYzwok",
+    "title": "Mithras: Master of Mystery - Ronald Hutton",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.seriouseats.com/pantry-essentials-liquid-smoke",
+    "title": "Pantry Essentials: All About Liquid Smoke",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://nintil.com/nonduality/",
+    "title": "A first glimpse of non-duality",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=8FcCzirMwuk",
+    "title": "(12) Unboxing Rare Fashion History",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://syntropic.xyz/posts/2026-02-14-the-bonfire-in-the-cave/",
+    "title": "The Bonfire in the Cave",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://jvns.ca/blog/2026/02/18/man-pages/",
+    "title": "Notes on clarifying man pages",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://cannibalhalflinggaming.com/2026/02/11/five-tiers-of-rpg-publishing/?utm_source=KieronGillen&utm_medium=email&utm_campaign=361-i-will-spell-badly",
+    "title": "Five Tiers of RPG Publishing",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://essays.fnnch.com/make-a-living",
+    "title": "How to Make a Living as an Artist",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://una.im/border-shape/",
+    "title": "una.im | border-shape: the future of the non-rectangular web",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://schwitzsplinters.blogspot.com/2026/02/disunity-and-indeterminacy-in.html",
+    "title": "Disunity and Indeterminacy in Artificial Consciousness (and Maybe in Human Consciousness Too)",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://dissentmagazine.org/online_articles/the-omnivorous-james-c-scott/",
+    "title": "The Omnivorous James C. Scott - Dissent Magazine",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://acoup.blog/2026/02/20/collections-ancient-mediterranean-mercenaries/",
+    "title": "Collections: Ancient Mediterranean Mercenaries!",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://detroitcineaste.net/2021/06/25/the-sparks-brothers/",
+    "title": "The Sparks Brothers",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://drmaciver.substack.com/p/the-hard-problem-with-hard-problems?publication_id=45148&post_id=187831348&isFreemail=true&r=p8s&triedRedirect=true",
+    "title": "The hard problem with hard problems",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://resobscura.substack.com/p/what-is-happening-to-writing?publication_id=1583525&post_id=187823656&isFreemail=true&r=p8s&triedRedirect=true",
+    "title": "What is happening to writing?",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=jeOuTGFizsU",
+    "title": "The Return of the Horned God  - Ronald Hutton",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Q1FgRKzAF_Y",
+    "title": "Modern Druids  - Ronald Hutton",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.robinsloan.com/lab/vox-machina/",
+    "title": "The voice of the computer",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=mdOyeNCkC0I",
+    "title": "(2) Why Ballerina Farm Gave Up On Raw Milk",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://herbsundays.substack.com/p/herb-sundays-177-idm-by-ramonpang?publication_id=503590&post_id=188748305&isFreemail=true&r=p8s&triedRedirect=true&utm_source=substack&utm_medium=email",
+    "title": "Herb Sundays 177: IDM by RamonPang",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.natemeyvis.com/the-future-of-migrations/",
+    "title": "The future of migrations",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.patreon.com/posts/getting-salty-it-149186286",
+    "title": "GETTING SALTY ABOUT IT: PART 2 | Grant Howitt",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=_zBrlVHhItw",
+    "title": "Voter Fraud Isn't Real",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=6OvWzjiLMRQ",
+    "title": "Democrats Should Welcome a \"Talking Filibuster\"",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=m60p7BEnN5Y",
+    "title": "Who was Asherah - Wife of Yahweh?",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://moultano.wordpress.com/2026/02/22/the-hunt-for-dark-breakfast/",
+    "title": "The Hunt for Dark Breakfast",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=SdJYRKXl0Ok",
+    "title": "The Ultimate Color E-Ink Tablet Buying Guide",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.autodidacts.io/social-cache-busting/",
+    "title": "Social Cache Busting",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.atvbt.com/bargains-for-me/",
+    "title": "Bargains For Me",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://newsletter.dancohen.org/archive/can-ai-prompt-us-to-ask-new-questions/",
+    "title": "Can AI Prompt Us to Ask New Questions?",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=OjCqu2KPKg4",
+    "title": "The Western Magical Tradition - Ronald Hutton",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://write.as/harold-lee/servants-without-masters",
+    "title": "Servants Without Masters",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.jmduke.com/posts/insourcing-your-data-warehouse.html",
+    "title": "Building a data greenhouse",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.ftrain.com/leading-thoughts",
+    "title": "Leading thoughts, by Paul Ford",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://pxlnv.com/blog/on-software-quality/",
+    "title": "On Software Quality",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.jmduke.com/posts/golinks.html",
+    "title": "Golinks",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.jmduke.com/posts/death-of-software.html",
+    "title": "The death of software, the A24 of software",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.jmduke.com/posts/harness-engineering.html",
+    "title": "Notes on \"Harness Engineering\"",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.jmduke.com/posts/subpaths-vs-subdomains.html",
+    "title": "Subpaths vs. subdomains",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.jmduke.com/posts/maybe-use-plain.html",
+    "title": "Maybe use Plain",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=HjuWuNKBkRc",
+    "title": "What was Moloch? Ancient Demonic God or Ritual Fire Sacrifice?",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://maxmautner.com/2026/02/22/bucees.html",
+    "title": "Buc-ee’s Is Better at Placemaking Than Your City",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.anildash.com/2026/02/23/taking-action-ai-harms/",
+    "title": "Taking action against AI harms",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://occasionalreview.substack.com/p/getting-into-other-peoples-beds?publication_id=1994754&post_id=188953897&isFreemail=true&r=p8s&triedRedirect=true&utm_source=substack&utm_medium=email",
+    "title": "Getting into other people’s beds",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.robinsloan.com/lab/worst-or-best/",
+    "title": "It was the best of times, etc.",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/",
+    "title": "Writing about Agentic Engineering Patterns",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://simonwillison.net/guides/agentic-engineering-patterns/code-is-cheap/",
+    "title": "Writing code is cheap now - Agentic Engineering Patterns",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://simonwillison.net/guides/agentic-engineering-patterns/red-green-tdd/",
+    "title": "Red/green TDD - Agentic Engineering Patterns",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://resobscura.substack.com/p/neolithic-habits-machine-age-tools?publication_id=1583525&post_id=142088810&isFreemail=true&r=p8s&triedRedirect=true",
+    "title": "The Secret History of Knocking on Wood",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://simonwillison.net/guides/agentic-engineering-patterns/first-run-the-tests/#atom-everything",
+    "title": "First run the tests - Agentic Engineering Patterns",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=mzBrFoA3mkk",
+    "title": "(2) Why Jesse Jackson Mattered",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=vkm-ZFlivyI",
+    "title": "(2) I built an entirely new, 100% native, 200% perfect, modal launcher",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=wzx26hNWRl4",
+    "title": "(2) Such Great Heights (From \"Tell Me Lies (Season 3)\")",
+    "tags": [
+      "music"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://simonwillison.net/2026/Feb/7/software-factory/",
+    "title": "How StrongDM’s AI team build serious software without even looking at the code",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.theatlantic.com/magazine/2026/03/ai-economy-labor-market-transformation/685731/?utm_source=substack&utm_medium=email",
+    "title": "America Isn’t Ready for What AI Will Do to Jobs",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.atvbt.com/a-boring-archetype/",
+    "title": "A Boring Archetype",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.jmduke.com/posts/five-observations-ai-tools.html",
+    "title": "Scattered thoughts on LLM tools",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://bsky.app/profile/bretdevereaux.bsky.social/post/3mfp4kdpf222l",
+    "title": "\"Online Rent-a-Sage\" Bret Devereaux",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://bsky.app/profile/bretdevereaux.bsky.social/post/3mfp5wcgbm22l",
+    "title": "\"Online Rent-a-Sage\" Bret Devereaux",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.argmin.net/p/can-anyone-fix-science",
+    "title": "Can anyone fix science?",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.jmduke.com/posts/failed-experiments.html",
+    "title": "Terragon, Conductor, PyCharm",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.patreon.com/posts/cry-havoc-and-of-151634429?post_id=151634429",
+    "title": "CRY HAVOC, AND UNLEASH THE BLOGS OF WAR: PART ONE | Grant Howitt",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=8rAOc_nJwz8",
+    "title": "(3) why do women love gay romances?",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.natemeyvis.com/how-many-windows-will-we-have-open/",
+    "title": "How many windows will we have open?",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://paulkrugman.substack.com/p/europe-v-america-whos-really-winning?publication_id=277517&post_id=189182474&isFreemail=true&r=p8s&triedRedirect=true",
+    "title": "Europe v America: Who’s Really Winning?",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://macwright.com/2026/02/25/new-tote.html",
+    "title": "New tote bag",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=C9oud7ZSnCc",
+    "title": "(4) I Cannot Believe I Watched Trump's Entire Speech",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://profadamroberts.substack.com/p/rob-grant?publication_id=2961310&post_id=189278772&isFreemail=true&r=p8s&triedRedirect=true",
+    "title": "Rob Grant",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.jmduke.com/posts/obsidian-for-internal-docs.html",
+    "title": "Obsidian for internal docs",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://simonwillison.net/guides/agentic-engineering-patterns/hoard-things-you-know-how-to-do/#atom-everything",
+    "title": "Hoard things you know how to do - Agentic Engineering Patterns",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://x.com/karpathy/status/2026731645169185220",
+    "title": "Andrej Karpathy",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.vox.com/podcasts/467048/unexplainable-hearing-audio-podcast-brain",
+    "title": "How the brain builds your world of sound",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://simonwillison.net/2026/Jan/8/llm-predictions-for-2026/",
+    "title": "Oxide and Friends podcast",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://rwblickhan.org/newsletters/in-a-decade-well-all-be-using-mog-as-a-verb-without-thinking-twice/",
+    "title": "In A Decade We’ll All Be Using “Mog” As A Verb Without Thinking Twice",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://bsky.app/profile/sarahjeong.bsky.social/post/3mfgbakrqpc2i",
+    "title": "sarah jeong (@sarahjeong.bsky.social)",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://news.gallup.com/poll/692816/people-globally-living-better-lives.aspx",
+    "title": "they will continue",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.the-independent.com/arts-entertainment/music/features/emily-bronte-200th-anniversary-kate-bush-wuthering-heights-pop-song-inspiration-a8464206.html",
+    "title": "Wuthering Heights",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://eclecticlight.co/2026/01/24/painting-the-spirits-of-water-gods-and-naiads/",
+    "title": "Naiads and other water nymphs",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.google.com/books/edition/Making_Movies/9G_JHAAACAAJ?hl=en&gl=us&kptab=editions&sa=X&ved=2ahUKEwinzuuMit6SAxWAm2oFHW7wEw8QmBZ6BAgJEAg",
+    "title": "Making Movies",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://wwd.com/fashion-news/fashion-scoops/adidas-chinese-new-year-jacket-tang-dynasty-1236906659/",
+    "title": "Chinese Adidas track suits",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://forum.obsidian.md/t/vim-enable-key-repeat-option/1095/3",
+    "title": "this thread",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://notes.billmill.org/computer_usage/obsidian/How_to_stop_obsidian_from_popping_up_a_character_when_holding_a_key.html",
+    "title": "notes.billmill.org",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://obailey.weebly.com/",
+    "title": "Olivia Bailey",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://objectionable.net/",
+    "title": "Thi Nguyen",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.emotionandsociety.com/",
+    "title": "Emotion and Society Lab",
     "tags": [],
     "source": "Obsidian"
   }
