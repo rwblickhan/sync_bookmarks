@@ -16,6 +16,7 @@ regex = "1.11.1"
 rusqlite = { version = "0.35.0", features = ["bundled"] }
 serde = { version = "1.0.219", features = ["serde_derive"] }
 serde_json = "1.0.140"
+ureq = { version = "3", features = ["json"] }
 url = "2.5.4"
 walkdir = "2.5.0"
 

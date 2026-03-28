@@ -1,3 +1,5 @@
+use std::collections::HashSet;
+
 use anyhow::{Context, Ok};
 use rusqlite::{named_params, Connection};
 
@@ -100,6 +102,20 @@ impl Cache {
             ));
         }
         Ok(links)
+    }
+
+    pub fn query_all_urls(&self) -> anyhow::Result<HashSet<String>> {
+        let mut stmt = self
+            .conn
+            .prepare("SELECT url FROM cache")
+            .context("Failed to prepare query for all URLs")?;
+
+        let urls = stmt
+            .query_map([], |row| row.get(0))
+            .context("Failed to query all URLs")?
+            .collect::<Result<HashSet<String>, _>>()?;
+
+        Ok(urls)
     }
 
     pub fn insert(&self, link: &CachedLink) -> anyhow::Result<()> {

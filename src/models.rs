@@ -89,11 +89,18 @@ impl From<ObsidianLink> for SerializedLink {
 #[derive(serde::Deserialize)]
 pub struct GoodLinksLink {
     #[serde(rename = "readAt")]
-    pub read_at: Option<f32>,
+    pub read_at: Option<String>,
     pub title: Option<String>,
     #[serde(default)]
     pub tags: Vec<String>,
     pub url: String,
+}
+
+#[derive(serde::Deserialize)]
+pub struct GoodLinksApiResponse {
+    pub data: Vec<GoodLinksLink>,
+    #[serde(rename = "hasMore")]
+    pub has_more: bool,
 }
 
 pub struct ObsidianLink {

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:goodlinks.app)",
+      "Bash(curl -s \"https://goodlinks.app/api/\")",
+      "Bash(python3 -c \"import sys; content = sys.stdin.read\\(\\); print\\(content\\)\")",
+      "Bash(curl -s https://goodlinks.app/api/ 2)",
+      "Read(//tmp/**)",
+      "Bash(cargo build:*)"
+    ]
+  }
+}

@@ -48,6 +48,9 @@ pub fn fetch_to_cache(verbose: bool) -> anyhow::Result<()> {
                 text_content: link.text_content.clone(),
             },
             None => {
+                if verbose {
+                    println!("Fetching {}", link.url);
+                }
                 let product = match extractor::scrape(&link.url) {
                     Ok(product) => product,
                     Err(e) => {
