@@ -1,0 +1,19 @@
+[tasks.build]
+alias = "b"
+run = "cargo build --release"
+
+[tasks.copy-bin]
+depends = ["build"]
+run = "cp target/release/sync_bookmarks ~/bin"
+
+[tasks.copy-man]
+depends = ["build"]
+run = "cp target/release/sync_bookmarks.1 ~/man/man1"
+
+[tasks.copy-completions]
+depends = ["build"]
+run = "cp target/release/sync_bookmarks.fish ~/.config/fish/completions"
+
+[tasks.install]
+alias = "i"
+depends = ["copy-bin", "copy-man", "copy-completions"]
