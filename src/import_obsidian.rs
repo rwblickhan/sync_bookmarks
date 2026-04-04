@@ -91,7 +91,7 @@ fn process_markdown_files(directory: &str) -> anyhow::Result<Vec<ObsidianLink>> 
 }
 
 pub fn import_obsidian() -> anyhow::Result<()> {
-    let obsidian_links = process_markdown_files("/Users/rwblickhan/Developer/notes")?;
+    let obsidian_links = process_markdown_files("/Users/rwblickhan/Documents/notes")?;
 
     println!("Found {} Obsidian links", obsidian_links.len());
 
