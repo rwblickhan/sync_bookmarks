@@ -50608,18 +50608,6 @@
     "source": "Obsidian"
   },
   {
-    "url": "https://mergiraf.org/conflicts.html",
-    "title": "a wide range of Git merge conflicts",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
-    "url": "https://mergiraf.org/languages.html",
-    "title": "its understanding of your language",
-    "tags": [],
-    "source": "Obsidian"
-  },
-  {
     "url": "https://mergiraf.org/",
     "title": "Introduction - Mergiraf",
     "tags": [],
@@ -61574,6 +61562,346 @@
   {
     "url": "https://countercraft.substack.com/p/the-principles-of-plotting-part-two",
     "title": "The Principles of Plotting Part Two: Oscillation",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.felesatra.moe/blog/2024/12/23/jj-is-great-for-the-wrong-reason",
+    "title": "Jujutsu is great for the wrong reason",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://andre.arko.net/2025/10/12/jj-part-3-workflows/",
+    "title": "jj part 3: workflows",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://andre.arko.net/2025/10/02/jj-part-2-commands/",
+    "title": "jj part 2: commands & revsets",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://andre.arko.net/2025/09/28/jj-part-1-what-is-it/",
+    "title": "jj part 1: what is it",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.reddit.com/r/AskHistorians/comments/1dnqpy/how_many_times_has_the_concept_of_writing_been/?solution=5e0b4fe89daa79b45e0b4fe89daa79b4&js_challenge=1&token=bbbe4bf1c9a2b5160829c4be34da5861b5c52fd48be16ff933436a5bad15b2bf&jsc_orig_r=",
+    "title": "How many times has the concept of writing been independently invented? : r/AskHistorians",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://andre.arko.net/2025/10/15/jj-part-4-configuration/",
+    "title": "jj part 4: configuration",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=VhiNqsEMHtk",
+    "title": "Alito Called Himself an Originalist. Then He Ignored the Origin.",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://maxmautner.com/2025/12/15/ivan-illich.html",
+    "title": "Vulnerability and Ivan Illich",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.atvbt.com/measures-we-need-now/?ref=atoms-vs-bits-newsletter",
+    "title": "Measures We Need Now",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://v5.chriskrycho.com/notes/multitasking/",
+    "title": "Multitasking — Sympolymathesy, by Chris Krycho",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://approximateknowledge.net/etym/2026/05/21/blog.html",
+    "title": "blog",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://balioc.tumblr.com/post/817231157816115200/it-turns-out-you-can-in-fact-fill-the-hearts-of",
+    "title": "The Baliocene Apocrypha",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.atvbt.com/remix-i-never-saw-the-plots-resolve/",
+    "title": "Remix: I Never Saw The Plots Resolve",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://profadamroberts.substack.com/p/the-politics-of-baldness?publication_id=2961310&post_id=198616324&isFreemail=true&r=p8s&triedRedirect=true",
+    "title": "The Politics of Baldness",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.blackbirdspyplane.com/p/the-grace-based-path",
+    "title": "Take the grace-based path",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.atvbt.com/before-our-eyes/",
+    "title": "Before Our Eyes",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://blog.ayjay.org/and-i-will-undertake-all-these-to-teach/",
+    "title": "“And I will undertake all these to teach” – The Homebound Symphony",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.robinsloan.com/lab/ai-promotion/",
+    "title": "Laying it on thick",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://a.wholelottanothing.org/my-first-thru-fourth-rides-inside-a-waymo/",
+    "title": "My first thru fourth rides inside a Waymo",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://a.wholelottanothing.org/the-vw-id-buzz-six-months-and-eight-thousand-miles-later/",
+    "title": "The VW ID Buzz: six months and eight thousand miles later",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.robinsloan.com/lab/steady-steady/",
+    "title": "Steady, steady",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://bsky.app/profile/bretdevereaux.bsky.social/post/3mm7hpseb6c22",
+    "title": "\"Online Rent-a-Sage\" Bret Devereaux",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://resobscura.substack.com/p/what-is-happening-to-publishing?publication_id=1583525&post_id=198371012&isFreemail=true&r=p8s&triedRedirect=true&utm_source=substack&utm_medium=email",
+    "title": "What is happening to publishing?",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.atvbt.com/the-big-3/",
+    "title": "The Big 3",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://bsky.app/profile/bretdevereaux.bsky.social/post/3mm7qoenj5k2q",
+    "title": "\"Online Rent-a-Sage\" Bret Devereaux",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.atvbt.com/grices-maxims/",
+    "title": "Grice's Maxims",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=xf8m13ba5gI",
+    "title": "Why is Dior copying Chanel?",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://bsky.app/profile/bretdevereaux.bsky.social/post/3mm54hyvetc2f",
+    "title": "\"Online Rent-a-Sage\" Bret Devereaux",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://michaelnotebook.com/dci/index.html",
+    "title": "Developing creative identity",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://whyisthisinteresting.substack.com/p/the-creative-parent-edition?publication_id=7000&post_id=197265569&isFreemail=true&r=p8s&triedRedirect=true",
+    "title": "The Creative Parent Edition",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://resobscura.substack.com/p/survivorship-bias-in-history?publication_id=1583525&post_id=171239923&isFreemail=true&r=p8s&triedRedirect=true",
+    "title": "Why they stopped building wooden stupas",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.robinsloan.com/newsletters/season-of-change/",
+    "title": "Season of change",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.futilitycloset.com/2026/05/17/snunkoople/",
+    "title": "Snunkoople",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://borretti.me/article/the-applicability-of-spaced-repetition",
+    "title": "The Applicability of Spaced Repetition",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://acoup.blog/2026/05/15/fireside-friday-may-15-2026/",
+    "title": "Fireside Friday, May 15, 2026",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://comment.org/pattern-recognition/",
+    "title": "Pattern Recognition",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://balioc.tumblr.com/post/766459346925256704/eh-this-really-depends-what-features-matter-to",
+    "title": "The Baliocene Apocrypha",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://shorewalkers.org/great-saunter/",
+    "title": "Great Saunter",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://better-mouse.com/",
+    "title": "BetterMouse",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://github.com/civilblur/mazanoke",
+    "title": "mazanoke",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://mole.fit/?ueid=c7167216f83a4f9241be67d46c86c056",
+    "title": "Mole",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://github.com/tw93/Mole",
+    "title": "CLI",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://parachuteapps.com/parachute",
+    "title": "Parachute Backup",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://photosbackup.app/",
+    "title": "Photos Backup Anywhere",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://flowstay.app/",
+    "title": "Flowstay",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://releasebot.io/",
+    "title": "Releasebot",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://poemsancientandmodern.substack.com/p/todays-poem-alice-in-the-looking?publication_id=2265689&post_id=197026644&isFreemail=true&r=p8s&triedRedirect=true",
+    "title": "Today’s Poem: Alice in the Looking Glass",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.woman-of-letters.com/p/money-and-prestige",
+    "title": "my piece on the New Yorker story",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://justinpombrio.net/src/jj-cheat-sheet.pdf",
+    "title": "Justin Pombrio's jj cheat sheet",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://polypane.app/snippets/",
+    "title": "Polypane Snippets Store",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.robinsloan.com/lab/big-button/",
+    "title": "The big button",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://hk.jdx.dev/",
+    "title": "hk",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://github.com/mattwilkinsonn/jj-hooks",
+    "title": "jj-hooks",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://github.com/aranw/jjw",
+    "title": "jjw",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://sequoiafabrica.org/",
+    "title": "Sequoia Fabrica Community Makerspace",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.futilitycloset.com/2026/05/18/the-hattusa-green-stone/",
+    "title": "The Hattusa Green Stone",
     "tags": [],
     "source": "Obsidian"
   }
