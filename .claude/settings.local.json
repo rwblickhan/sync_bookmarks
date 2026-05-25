@@ -6,7 +6,9 @@
       "Bash(python3 -c \"import sys; content = sys.stdin.read\\(\\); print\\(content\\)\")",
       "Bash(curl -s https://goodlinks.app/api/ 2)",
       "Read(//tmp/**)",
-      "Bash(cargo build:*)"
+      "Bash(cargo build:*)",
+      "Bash(op --version)",
+      "WebFetch(domain:developer.raindrop.io)"
     ]
   }
 }

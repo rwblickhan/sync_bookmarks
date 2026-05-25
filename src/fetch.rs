@@ -8,7 +8,7 @@ use crate::{
     models::{Article, CachedLink, SerializedLink},
 };
 
-const BANNED_HOSTS: &[&str] = &[
+pub const BANNED_HOSTS: &[&str] = &[
     "vitalik.ca",
     "archive.ph",
     "archive.is",
