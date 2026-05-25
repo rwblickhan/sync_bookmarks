@@ -373,23 +373,20 @@ pub fn sync_raindrop(dry_run: bool) -> anyhow::Result<()> {
         }
     }
 
-    // Delete extra raindrops in batches of BATCH_SIZE
-    let delete_ids: Vec<i64> = to_delete.iter().map(|r| r.id).collect();
-    for chunk in delete_ids.chunks(BATCH_SIZE) {
-        let body = serde_json::to_vec(&serde_json::json!({ "ids": chunk }))?;
-        send_with_retry(&format!("delete {} raindrops", chunk.len()), || {
-            agent.run(
-                http::Request::builder()
-                    .method(http::Method::DELETE)
-                    .uri(format!("{RAINDROP_API_BASE}/raindrops/-1"))
-                    .header("Authorization", format!("Bearer {token}"))
-                    .header("Content-Type", "application/json")
-                    .body(body.clone())
-                    .expect("failed to build DELETE request"),
-            )
+    // Delete extra raindrops one at a time
+    for (i, raindrop) in to_delete.iter().enumerate() {
+        send_with_retry(&format!("delete raindrop {}", raindrop.id), || {
+            agent
+                .run(
+                    http::Request::builder()
+                        .method(http::Method::DELETE)
+                        .uri(format!("{RAINDROP_API_BASE}/raindrop/{}", raindrop.id))
+                        .header("Authorization", format!("Bearer {token}"))
+                        .body(vec![])
+                        .expect("failed to build DELETE request"),
+                )
         })?;
-
-        println!("Deleted {} raindrops", chunk.len());
+        println!("Deleted ({}/{}) {}", i + 1, to_delete.len(), raindrop.link);
     }
 
     println!("\nSync complete!");

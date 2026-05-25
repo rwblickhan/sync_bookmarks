@@ -24,6 +24,5 @@ fn main() -> anyhow::Result<()> {
             fetch_to_cache(verbose)?;
             Ok(())
         }
-        Commands::SyncRaindrop { dry_run } => sync_raindrop(dry_run),
     }
 }
