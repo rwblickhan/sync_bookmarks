@@ -3,7 +3,7 @@ use std::collections::HashSet;
 use anyhow::Context;
 
 use crate::cache::{Cache, CacheType};
-use crate::models::{GoodLinksApiResponse, SerializedLink};
+use crate::models::{GoodLinksApiResponse, LinkSource, SerializedLink};
 
 const GOODLINKS_OP_BASE_URL: &str = "op://Private/GoodLinks/base_url";
 const GOODLINKS_OP_TOKEN: &str = "op://Private/GoodLinks/token";
@@ -20,6 +20,16 @@ fn read_op_secret(path: &str) -> anyhow::Result<String> {
         );
     }
     Ok(String::from_utf8(output.stdout)?.trim().to_string())
+}
+
+fn filter_removed_goodlinks(
+    existing: Vec<SerializedLink>,
+    api_urls: &HashSet<String>,
+) -> Vec<SerializedLink> {
+    existing
+        .into_iter()
+        .filter(|link| api_urls.contains(&link.url) || link.source != LinkSource::GoodLinks)
+        .collect()
 }
 
 pub fn import_goodlinks(verbose: bool) -> anyhow::Result<()> {
@@ -60,9 +70,13 @@ pub fn import_goodlinks(verbose: bool) -> anyhow::Result<()> {
     let cache = Cache::new(CacheType::Disk("cache.db".to_string()))?;
     let cached_urls = cache.query_all_urls()?;
 
-    // Load existing links.json
+    let api_urls: HashSet<_> = api_links.iter().map(|link| link.url.clone()).collect();
+
+    // Load existing links.json, removing GoodLinks entries no longer in the API response
     let mut serialized_links: Vec<SerializedLink> = match std::fs::read_to_string("links.json") {
-        Ok(contents) => serde_json::from_str(&contents)?,
+        Ok(contents) => {
+            filter_removed_goodlinks(serde_json::from_str(&contents)?, &api_urls)
+        }
         Err(_) => Vec::new(),
     };
 
@@ -101,4 +115,86 @@ pub fn import_goodlinks(verbose: bool) -> anyhow::Result<()> {
     );
 
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn goodlinks_link(url: &str) -> SerializedLink {
+        SerializedLink {
+            url: url.to_string(),
+            title: url.to_string(),
+            tags: Vec::new(),
+            source: LinkSource::GoodLinks,
+        }
+    }
+
+    fn obsidian_link(url: &str) -> SerializedLink {
+        SerializedLink {
+            url: url.to_string(),
+            title: url.to_string(),
+            tags: Vec::new(),
+            source: LinkSource::Obsidian,
+        }
+    }
+
+    #[test]
+    fn test_removes_goodlinks_entry_missing_from_api() {
+        let existing = vec![
+            goodlinks_link("https://keep.example.com"),
+            goodlinks_link("https://removed.example.com"),
+        ];
+        let api_urls: HashSet<String> = ["https://keep.example.com".to_string()].into();
+
+        let result = filter_removed_goodlinks(existing, &api_urls);
+
+        assert_eq!(result.len(), 1);
+        assert_eq!(result[0].url, "https://keep.example.com");
+    }
+
+    #[test]
+    fn test_preserves_obsidian_entries_not_in_api() {
+        let existing = vec![
+            goodlinks_link("https://goodlinks.example.com"),
+            obsidian_link("https://obsidian.example.com"),
+        ];
+        let api_urls: HashSet<String> = ["https://goodlinks.example.com".to_string()].into();
+
+        let result = filter_removed_goodlinks(existing, &api_urls);
+
+        assert_eq!(result.len(), 2);
+    }
+
+    #[test]
+    fn test_empty_api_removes_all_goodlinks_entries() {
+        let existing = vec![
+            goodlinks_link("https://a.example.com"),
+            goodlinks_link("https://b.example.com"),
+            obsidian_link("https://obsidian.example.com"),
+        ];
+        let api_urls: HashSet<String> = HashSet::new();
+
+        let result = filter_removed_goodlinks(existing, &api_urls);
+
+        assert_eq!(result.len(), 1);
+        assert_eq!(result[0].source, LinkSource::Obsidian);
+    }
+
+    #[test]
+    fn test_all_api_urls_present_keeps_everything() {
+        let existing = vec![
+            goodlinks_link("https://a.example.com"),
+            goodlinks_link("https://b.example.com"),
+        ];
+        let api_urls: HashSet<String> = [
+            "https://a.example.com".to_string(),
+            "https://b.example.com".to_string(),
+        ]
+        .into();
+
+        let result = filter_removed_goodlinks(existing, &api_urls);
+
+        assert_eq!(result.len(), 2);
+    }
 }
