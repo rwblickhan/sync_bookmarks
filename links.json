@@ -9608,12 +9608,6 @@
     "source": "GoodLinks"
   },
   {
-    "url": "https://journal.buzzusborne.com/post/728216582976897024/okay-this-is-a-pretty-amazing-piece-of-art",
-    "title": "Design Inspiration",
-    "tags": [],
-    "source": "GoodLinks"
-  },
-  {
     "url": "https://ew.com/tv/scott-pilgrim-takes-off-preview-michael-cera-chris-evans-edgar-wright/",
     "title": "Bread still makes you fat! Behind the scenes of Scott Pilgrim Takes Off - Entertainment Weekly",
     "tags": [],
@@ -10946,12 +10940,6 @@
   {
     "url": "https://simonwillison.net/2023/Oct/23/embeddings/",
     "title": "Embeddings: What they are and why they matter",
-    "tags": [],
-    "source": "GoodLinks"
-  },
-  {
-    "url": "https://blog.jim-nielsen.com/2023/javascript-is-enabled-by-default/",
-    "title": "JavaScript Is Enabled by Default in Web Browsers",
     "tags": [],
     "source": "GoodLinks"
   },
@@ -16152,12 +16140,6 @@
     "source": "GoodLinks"
   },
   {
-    "url": "https://danluu.com/corp-eng-blogs/",
-    "title": "How (some) good corporate engineering blogs are written",
-    "tags": [],
-    "source": "GoodLinks"
-  },
-  {
     "url": "https://andymatuschak.org/hmwl/",
     "title": "How Might We Learn?",
     "tags": [
@@ -19780,12 +19762,6 @@
   {
     "url": "https://www.argmin.net/p/declarative-mathematical-programming",
     "title": "Declarative Mathematical Programming - by Ben Recht",
-    "tags": [],
-    "source": "GoodLinks"
-  },
-  {
-    "url": "https://tedium.co/2024/09/17/temu-de-minimis-loophole-explained/",
-    "title": "The De Minimis Loophole Explained—And How Temu Uses It",
     "tags": [],
     "source": "GoodLinks"
   },
@@ -24402,12 +24378,6 @@
     "source": "GoodLinks"
   },
   {
-    "url": "https://til.simonwillison.net/css/dialog-full-height",
-    "title": "Styling an HTML dialog modal to take the full height of the viewport",
-    "tags": [],
-    "source": "GoodLinks"
-  },
-  {
     "url": "https://v5.chriskrycho.com/notes/show-up/",
     "title": "Show Up! — Sympolymathesy, by Chris Krycho",
     "tags": [],
@@ -25658,12 +25628,6 @@
   {
     "url": "https://maya.land/responses/2025/04/24/letterloop-newsletter.html",
     "title": "letterloop: social-media adjacent cute questionnaire-newsletter thing",
-    "tags": [],
-    "source": "GoodLinks"
-  },
-  {
-    "url": "https://v5.chriskrycho.com/notes/using-mise-en-place-for-dotfiles/",
-    "title": "Using mise-en-place for dotfiles — Sympolymathesy, by Chris Krycho",
     "tags": [],
     "source": "GoodLinks"
   },
@@ -40055,14 +40019,6 @@
     "url": "https://daringfireball.net/2026/05/y_combinators_stake_in_openai",
     "title": "Y Combinator’s Stake in OpenAI",
     "tags": [],
-    "source": "GoodLinks"
-  },
-  {
-    "url": "https://www.youtube.com/watch?v=18HdBQjbv58",
-    "title": "(17) The Supreme Court's Jim Crow Jurisprudence",
-    "tags": [
-      "video"
-    ],
     "source": "GoodLinks"
   },
   {
@@ -60882,6 +60838,702 @@
   {
     "url": "https://github.com/microsoft/RustTraining",
     "title": "microsoft/RustTraining",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://elliotbonneville.com/programmers-arent-people/",
+    "title": "Programmers Aren't People - Elliot Bonneville",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://katrosenfield.substack.com/p/on-being-canceled-before-it-was-cool?ref=thediff.co",
+    "title": "On being canceled before it was cool",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=G0xl0oIjKB4",
+    "title": "(19) PCSK9 Might Kill You - Should We Disable it?",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://lucumr.pocoo.org/2026/6/6/communities-of-not/",
+    "title": "Communities of Not",
+    "tags": [],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=087PCAdzGmU",
+    "title": "Was Genghis Khan Secretly a Samurai?",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=NKJf0JYpcnw",
+    "title": "Why Does Everyone Suddenly Hate Polyester? (Synthetics Explained)",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=XRcwwZXJ8gk",
+    "title": "The easiest way to make the world smarter",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=EaJSPeJmqis",
+    "title": "(18) How People Secretly Record You With Meta Glasses",
+    "tags": [
+      "video"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://kottke.org/26/06/daft-punk-medieval-style",
+    "title": "Daft Punk, Medieval-Style",
+    "tags": [
+      "music"
+    ],
+    "source": "GoodLinks"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/J_Dilla",
+    "title": "J Dilla",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://x.com/tonylfeng/status/2050592287697301828?utm_source=Robin_Sloan_sent_me",
+    "title": "Tony Feng’s notion",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.amazon.com/dp/B000VDENOA/ref=as_li_qf_sp_asin_til?tag=the-new-atlantis-20&camp=0&creative=0&linkCode=as1&creativeASIN=B000VDENOA&adid=1ASJ2KA9V6FM5QJMXR51&",
+    "title": "The Dynasty of Abu",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.amazon.com/dp/0226616746/ref=as_li_qf_sp_asin_til?tag=the-new-atlantis-20&camp=0&creative=0&linkCode=as1&creativeASIN=0226616746&adid=1KT3FCBM8JRZ9XJ463E6&",
+    "title": "The Elephant’s Secret Sense",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "http://www.nytimes.com/2006/10/08/magazine/08elephant.html?pagewanted=all&_r=1&",
+    "title": "do not fit with the sudden change",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://journal.buzzusborne.com/post/728216582976897024/okay-this-is-a-pretty-amazing-piece-of-art",
+    "title": "Buzz Words",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://bsky.app/profile/arr.bsky.social/post/3mnkpdszzac2x",
+    "title": "Post by arr on Bluesky",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/k1dU1_Gp-po?si=xSsuxV3fyZpue8CO",
+    "title": "altitude affect coffee",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://bsky.app/profile/bretdevereaux.bsky.social/post/3mh4hvpnpzp2u",
+    "title": "Why",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/polenta-vs-grits-vs-cornmeal-11878733",
+    "title": "kind of cornmeal",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.merriam-webster.com/wordplay/spruce-meaning-origin",
+    "title": "origin",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.kingarthurbaking.com/blog/2018/03/26/tangzhong",
+    "title": "tangzhong",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/#differences-between-connect-and-useselector",
+    "title": "difference",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=xrKsjy7nh8Y",
+    "title": "Lance Hedrick's zuppa lunga",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=-B4tfduOQ7w",
+    "title": "classic example",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/k1dU1_Gp-po?si=xSsuxV3fyZpue8CO",
+    "title": "one-way valves",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://libyear.com",
+    "title": "libyear",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=-B4tfduOQ7w",
+    "title": "wovens",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://probmods.org/chapters/introduction.html",
+    "title": "generative model in cognition",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=b7r8WTYzwok",
+    "title": "Roman invention",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.esveo.com/en/blog/undo-redo-and-the-command-pattern/",
+    "title": "command pattern",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/how-to-make-a-gastrique",
+    "title": "gastrique sauce",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=b7r8WTYzwok",
+    "title": "main activities",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/the-serious-eats-guide-to-sugar-syrup-honey-natural-sweetners",
+    "title": "invert syrup",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/wYFfiwU08uo?si=COgh3tphA-JeqYl_",
+    "title": "similarity measure",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://bsky.app/profile/bretdevereaux.bsky.social/post/3mh4hvpnpzp2u",
+    "title": "change",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=b7r8WTYzwok",
+    "title": "Cautes and Cautopates",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=-B4tfduOQ7w",
+    "title": "knits",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/93waR1jzoLA?si=U5RlJyOccljryY_t",
+    "title": "origin of the macchiato's name",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/the-serious-eats-guide-to-sugar-syrup-honey-natural-sweetners",
+    "title": "maltose",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://profadamroberts.substack.com/p/the-mystery-of-the-beef-wellington",
+    "title": "Beef Wellington",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=-B4tfduOQ7w",
+    "title": "knit",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=-B4tfduOQ7w",
+    "title": "classic example",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/93waR1jzoLA?si=3jDYFmcRMUlYbsW4",
+    "title": "legend of the americano's name",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/polenta-vs-grits-vs-cornmeal-11878733",
+    "title": "kind of corn",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://blog.dwac.dev/posts/html-whitespace/#practical-advice",
+    "title": "HTML's broken whitespace",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=b7r8WTYzwok",
+    "title": "in a mithraeum",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/the-serious-eats-guide-to-sugar-syrup-honey-natural-sweetners",
+    "title": "glucose",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/93waR1jzoLA?si=3jDYFmcRMUlYbsW4",
+    "title": "probably not true",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://gastropod.com/sushis-extraordinary-evolution-from-pickle-to-primetime/",
+    "title": "origin",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=OjCqu2KPKg4",
+    "title": "so influential on the Western magical tradition",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.gnu.org/software/emacs/manual/html_node/elisp/Buffer-Gap.html",
+    "title": "Emacs",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/the-serious-eats-guide-to-sugar-syrup-honey-natural-sweetners",
+    "title": "fructose",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=b7r8WTYzwok",
+    "title": "Mithraic religion",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=0tfQ7K-ec_g",
+    "title": "coffee soup",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/k1dU1_Gp-po?si=xSsuxV3fyZpue8CO",
+    "title": "three major coffee processing",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/the-serious-eats-guide-to-sugar-syrup-honey-natural-sweetners",
+    "title": "invert syrup",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/93waR1jzoLA?si=p4KTRo1b8iSJ1oeT",
+    "title": "origin of the cappucino's name",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://profadamroberts.substack.com/p/the-mystery-of-the-beef-wellington",
+    "title": "Wellington name",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Cadenus_and_Vanessa",
+    "title": "origin",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://probmods.org/chapters/introduction.html",
+    "title": "generative approach to cognition",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/the-serious-eats-guide-to-sugar-syrup-honey-natural-sweetners",
+    "title": "invert syrup",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.kingarthurbaking.com/blog/2017/09/29/autolyse-sourdough#to-autolyse",
+    "title": "history of autolyse",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/difference-dutch-process-natural-cocoa-powder-substitute",
+    "title": "natural cocoa powder",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://gastropod.com/sushis-extraordinary-evolution-from-pickle-to-primetime/",
+    "title": "popularized",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://gastropod.com/sushis-extraordinary-evolution-from-pickle-to-primetime/",
+    "title": "origin",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://css-tricks.com/css-cascade-layers",
+    "title": "priority order of layers",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.merriam-webster.com/wordplay/spruce-meaning-origin",
+    "title": "related",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/k1dU1_Gp-po?si=xSsuxV3fyZpue8CO",
+    "title": "other common name",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://gastropod.com/sushis-extraordinary-evolution-from-pickle-to-primetime/",
+    "title": "develop",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://winefolly.com/deep-dive/wine-characteristics/",
+    "title": "wine taste",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.kingarthurbaking.com/blog/2022/03/14/difference-between-diastatic-malt-non-diastatic-malt-barley-malt-syrup",
+    "title": "malt powder",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/polenta-vs-grits-vs-cornmeal-11878733",
+    "title": "kind of cornmeal",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.merriam-webster.com/wordplay/spruce-meaning-origin",
+    "title": "origin",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://bsky.app/profile/bretdevereaux.bsky.social/post/3mh4hvpnpzp2u",
+    "title": "Why",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/the-serious-eats-guide-to-sugar-syrup-honey-natural-sweetners",
+    "title": "three monosaccharides",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/the-serious-eats-guide-to-sugar-syrup-honey-natural-sweetners",
+    "title": "lactose",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/the-serious-eats-guide-to-sugar-syrup-honey-natural-sweetners",
+    "title": "lactose",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=-DF_Qn9St7M",
+    "title": "break down",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.sfchronicle.com/totalsf/article/sebastopol-downtown-city-sonoma-county-22259423.php?sid=638c256380383cf2790df08a&ss=P&st_rid=78c4e0e7-55f1-45ff-918e-16df92e506dd",
+    "title": "origin",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://gastropod.com/sushis-extraordinary-evolution-from-pickle-to-primetime/",
+    "title": "changes",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.merriam-webster.com/wordplay/spruce-meaning-origin",
+    "title": "origin",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=-B4tfduOQ7w",
+    "title": "difference",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://gastropod.com/sushis-extraordinary-evolution-from-pickle-to-primetime/",
+    "title": "invented",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=b7r8WTYzwok",
+    "title": "Mithraic tauroctony",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://bsky.app/profile/bretdevereaux.bsky.social/post/3mh4hvpnpzp2u",
+    "title": "Why",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://profadamroberts.substack.com/p/the-mystery-of-the-beef-wellington",
+    "title": "Beef Wellington's",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://gastropod.com/sushis-extraordinary-evolution-from-pickle-to-primetime/",
+    "title": "earliest references",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/difference-dutch-process-natural-cocoa-powder-substitute",
+    "title": "Dutch process cocoa powder",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=b7r8WTYzwok",
+    "title": "timeline",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/the-serious-eats-guide-to-sugar-syrup-honey-natural-sweetners",
+    "title": "invert syrup",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=-B4tfduOQ7w",
+    "title": "nonwovens",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://thespirits.substack.com/p/the-cabinet-eau-de-vie",
+    "title": "eau-de-vie",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=-B4tfduOQ7w",
+    "title": "classic example",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.kingarthurbaking.com/blog/2018/03/26/tangzhong",
+    "title": "benefit of a tangzhong",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://gastropod.com/sushis-extraordinary-evolution-from-pickle-to-primetime/",
+    "title": "invented",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/#differences-between-connect-and-useselector",
+    "title": "result",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/onPqCDlcum8?si=gisWJWD6Tb17I0-g",
+    "title": "main fashion weeks",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/the-serious-eats-guide-to-sugar-syrup-honey-natural-sweetners",
+    "title": "sucrose",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://thespirits.substack.com/p/the-cabinet-eau-de-vie",
+    "title": "eau-de-vie",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/onPqCDlcum8?si=gisWJWD6Tb17I0-g",
+    "title": "major fashion capitals",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=-B4tfduOQ7w",
+    "title": "hides",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/wYFfiwU08uo?si=COgh3tphA-JeqYl_",
+    "title": "similarity measure",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/93waR1jzoLA?si=3jDYFmcRMUlYbsW4",
+    "title": "americano",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.esveo.com/en/blog/undo-redo-and-the-command-pattern/",
+    "title": "pattern",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/the-serious-eats-guide-to-sugar-syrup-honey-natural-sweetners",
+    "title": "invert syrup",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/polenta-vs-grits-vs-cornmeal-11878733",
+    "title": "hominy grits",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.kingarthurbaking.com/blog/2017/09/29/autolyse-sourdough#to-autolyse",
+    "title": "autolyse useful",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/the-serious-eats-guide-to-sugar-syrup-honey-natural-sweetners",
+    "title": "most common disaccharides",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.seriouseats.com/how-to-make-a-gastrique",
+    "title": "ratio of a gastrique sauce",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtu.be/wYFfiwU08uo?si=COgh3tphA-JeqYl_",
+    "title": "best",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=b7r8WTYzwok",
+    "title": "name of the central Mithraic image",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://www.matuzo.at/blog/2026/put-aria-hidden-on-presentational-svgs",
+    "title": "all decorative SVGs",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=CjJ-J_xppa8",
+    "title": "main branches of British neopaganism",
+    "tags": [],
+    "source": "Obsidian"
+  },
+  {
+    "url": "https://youtube.com/watch?v=-B4tfduOQ7w",
+    "title": "four main categories of materials",
     "tags": [],
     "source": "Obsidian"
   }

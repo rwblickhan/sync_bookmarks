@@ -92,7 +92,11 @@ fn process_markdown_files(directory: &str) -> anyhow::Result<Vec<ObsidianLink>> 
 
 pub fn import_obsidian() -> anyhow::Result<()> {
     let home = std::env::var("HOME").context("HOME env var not set")?;
-    let obsidian_links = process_markdown_files(&format!("{home}/Documents/Obsidian Vaults/notes"))?;
+    let mut obsidian_links =
+        process_markdown_files(&format!("{home}/Documents/Obsidian Vaults/notes"))?;
+    obsidian_links.extend(process_markdown_files(&format!(
+        "{home}/Documents/Obsidian Vaults/mochi"
+    ))?);
 
     println!("Found {} Obsidian links", obsidian_links.len());
 
