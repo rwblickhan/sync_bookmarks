@@ -7,7 +7,7 @@ use url::Url;
 
 use crate::{
     cache::{Cache, CacheType},
-    models::{Article, CachedLink, SerializedLink},
+    models::{CachedLink, SerializedLink},
 };
 
 pub const BANNED_HOSTS: &[&str] = &[
@@ -44,39 +44,34 @@ pub fn fetch_to_cache(verbose: bool, links_path: &Path, cache_path: &Path) -> an
 
         let cached_link = cache.query(&link.url)?;
 
-        let article = match &cached_link {
-            Some(link) => Article {
-                title: link.title.clone(),
-                text_content: link.text_content.clone(),
-            },
-            None => {
-                if verbose {
-                    println!("Fetching {}", link.url);
+        if cached_link.is_none() {
+            if verbose {
+                println!("Fetching {}", link.url);
+            }
+            match extractor::scrape(&link.url) {
+                Ok(product) => {
+                    cache.insert(&CachedLink::new(
+                        link.url,
+                        product.title,
+                        link.source,
+                        link.tags,
+                        product.text,
+                    ))?;
                 }
-                let product = match extractor::scrape(&link.url) {
-                    Ok(product) => product,
-                    Err(e) => {
-                        if verbose {
-                            println!("Failed to parse link {}: {e}", link.url);
-                        }
-                        continue;
+                Err(e) => {
+                    if verbose {
+                        println!("Failed to parse link {}: {e}", link.url);
                     }
-                };
-                Article {
-                    title: product.title,
-                    text_content: product.text,
+                    // Record the failure so this link isn't retried on every future run.
+                    cache.insert_failed(&CachedLink::new(
+                        link.url,
+                        link.title,
+                        link.source,
+                        link.tags,
+                        String::new(),
+                    ))?;
                 }
             }
-        };
-
-        if cached_link.is_none() {
-            cache.insert(&CachedLink::new(
-                link.url,
-                article.title,
-                link.source,
-                link.tags,
-                article.text_content,
-            ))?;
         }
         pb.inc(1);
     }

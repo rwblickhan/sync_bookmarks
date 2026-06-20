@@ -10,6 +10,9 @@ pub enum CacheType {
     Memory,
 }
 
+/// How long a failed fetch is remembered before it's retried.
+const RETRY_AFTER_DAYS: u32 = 30;
+
 pub struct Cache {
     conn: Connection,
 }
@@ -39,14 +42,23 @@ impl Cache {
         Ok(Cache { conn })
     }
 
+    /// Links that failed to fetch are archived; once an archived link is more than
+    /// `RETRY_AFTER_DAYS` old, treat it as uncached so it gets retried.
     pub fn query(&self, url: &str) -> anyhow::Result<Option<CachedLink>> {
         let mut stmt = self
             .conn
-            .prepare("SELECT url, title, source, tags, parsed_content FROM cache WHERE url = :url")
+            .prepare(
+                "SELECT url, title, source, tags, parsed_content FROM cache
+                 WHERE url = :url
+                 AND (archived_at IS NULL OR archived_at > datetime('now', :retry_after))",
+            )
             .with_context(|| format!("Failed to prepare query looking for link {}", url))?;
 
         let mut rows = stmt
-            .query(named_params![":url": url.to_string()])
+            .query(named_params![
+                ":url": url.to_string(),
+                ":retry_after": format!("-{RETRY_AFTER_DAYS} days")
+            ])
             .with_context(|| format!("Failed to query for links with url {url}"))?;
 
         if let Some(row) = rows.next()? {
@@ -121,7 +133,37 @@ impl Cache {
     pub fn insert(&self, link: &CachedLink) -> anyhow::Result<()> {
         let tags_sql = serde_json::to_string(&link.tags)?;
         self.conn.execute(
-            "INSERT INTO cache (url, title, source, tags, parsed_content, archived_at) VALUES (:url, :title, :source, :tags, :parsed_content, NULL)",
+            "INSERT INTO cache (url, title, source, tags, parsed_content, archived_at) VALUES (:url, :title, :source, :tags, :parsed_content, NULL)
+             ON CONFLICT(url) DO UPDATE SET
+                title = excluded.title,
+                source = excluded.source,
+                tags = excluded.tags,
+                parsed_content = excluded.parsed_content,
+                archived_at = NULL",
+            named_params![
+                ":url": link.url,
+                ":title": link.title,
+                ":source": link.source,
+                ":tags": tags_sql,
+                ":parsed_content": link.text_content
+            ],
+        )?;
+        Ok(())
+    }
+
+    /// Record a link whose content could not be fetched, so it isn't retried on every run.
+    /// Stored with `archived_at` set so it's excluded from `query_unarchived` and is
+    /// retried again by `query` after `RETRY_AFTER_DAYS`.
+    pub fn insert_failed(&self, link: &CachedLink) -> anyhow::Result<()> {
+        let tags_sql = serde_json::to_string(&link.tags)?;
+        self.conn.execute(
+            "INSERT INTO cache (url, title, source, tags, parsed_content, archived_at) VALUES (:url, :title, :source, :tags, :parsed_content, CURRENT_TIMESTAMP)
+             ON CONFLICT(url) DO UPDATE SET
+                title = excluded.title,
+                source = excluded.source,
+                tags = excluded.tags,
+                parsed_content = excluded.parsed_content,
+                archived_at = CURRENT_TIMESTAMP",
             named_params![
                 ":url": link.url,
                 ":title": link.title,
@@ -153,6 +195,62 @@ mod tests {
         cache.insert(&link)?;
         let query_result = cache.query(&link.url)?.unwrap();
         assert_eq!(link, query_result);
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_insert_failed_is_skipped_until_retry_window_passes() -> anyhow::Result<()> {
+        let cache = Cache::new(CacheType::Memory)?;
+        let link = CachedLink {
+            url: "https://example.com".to_string(),
+            title: "Example".to_string(),
+            source: LinkSource::GoodLinks,
+            tags: Vec::new(),
+            text_content: String::new(),
+        };
+        cache.insert_failed(&link)?;
+
+        // Freshly archived: still treated as cached, so it won't be retried yet.
+        assert!(cache.query(&link.url)?.is_some());
+
+        // Backdate the failure past the retry window.
+        cache.conn.execute(
+            "UPDATE cache SET archived_at = datetime('now', '-31 days') WHERE url = :url",
+            named_params![":url": link.url],
+        )?;
+
+        // Now it should look uncached, so it gets retried.
+        assert!(cache.query(&link.url)?.is_none());
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_insert_after_failed_retry_clears_archived_at() -> anyhow::Result<()> {
+        let cache = Cache::new(CacheType::Memory)?;
+        let link = CachedLink {
+            url: "https://example.com".to_string(),
+            title: "Example".to_string(),
+            source: LinkSource::GoodLinks,
+            tags: Vec::new(),
+            text_content: String::new(),
+        };
+        cache.insert_failed(&link)?;
+        cache.conn.execute(
+            "UPDATE cache SET archived_at = datetime('now', '-31 days') WHERE url = :url",
+            named_params![":url": link.url],
+        )?;
+        assert!(cache.query(&link.url)?.is_none());
+
+        // A successful retry should overwrite the stale failure.
+        let fetched = CachedLink {
+            text_content: "Fetched content".to_string(),
+            ..link.clone()
+        };
+        cache.insert(&fetched)?;
+        let result = cache.query(&link.url)?.unwrap();
+        assert_eq!(result.text_content, "Fetched content");
 
         Ok(())
     }

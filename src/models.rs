@@ -4,7 +4,7 @@ use rusqlite::{
 };
 use serde::Serialize;
 
-#[derive(serde::Serialize, serde::Deserialize, PartialEq, Eq, Hash, Debug)]
+#[derive(serde::Serialize, serde::Deserialize, PartialEq, Eq, Hash, Debug, Clone)]
 pub enum LinkSource {
     GoodLinks,
     Obsidian,
@@ -29,7 +29,7 @@ impl ToSql for LinkSource {
     }
 }
 
-#[derive(PartialEq, Eq, Debug)]
+#[derive(PartialEq, Eq, Debug, Clone)]
 pub struct CachedLink {
     pub url: String,
     pub title: String,
@@ -106,9 +106,4 @@ pub struct GoodLinksApiResponse {
 pub struct ObsidianLink {
     pub title: String,
     pub url: String,
-}
-
-pub struct Article {
-    pub title: String,
-    pub text_content: String,
 }
