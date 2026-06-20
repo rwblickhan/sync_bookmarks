@@ -23,7 +23,7 @@ fn main() -> anyhow::Result<()> {
         Commands::Raindrop { dry_run } => sync_raindrop(dry_run, links),
         Commands::Import { verbose } => {
             import_goodlinks(verbose, links, cache)?;
-            import_obsidian(links)?;
+            import_obsidian(links, cache)?;
             fetch_to_cache(verbose, links, cache)?;
             Ok(())
         }

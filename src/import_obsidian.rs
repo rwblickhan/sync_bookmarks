@@ -6,6 +6,7 @@ use pulldown_cmark::{Event, LinkType, Options, Parser, Tag, TagEnd};
 use regex::Regex;
 use walkdir::{DirEntry, WalkDir};
 
+use crate::cache::{Cache, CacheType};
 use crate::models::{LinkSource, ObsidianLink, SerializedLink};
 
 fn parse_markdown_links(file_contents: &str) -> anyhow::Result<Vec<ObsidianLink>> {
@@ -92,7 +93,7 @@ fn process_markdown_files(directory: &str) -> anyhow::Result<Vec<ObsidianLink>> 
         })
 }
 
-pub fn import_obsidian(links_path: &Path) -> anyhow::Result<()> {
+pub fn import_obsidian(links_path: &Path, cache_path: &Path) -> anyhow::Result<()> {
     let home = std::env::var("HOME").context("HOME env var not set")?;
     let mut obsidian_links =
         process_markdown_files(&format!("{home}/Documents/Obsidian Vaults/notes"))?;
@@ -103,6 +104,10 @@ pub fn import_obsidian(links_path: &Path) -> anyhow::Result<()> {
     println!("Found {} Obsidian links", obsidian_links.len());
 
     let obsidian_urls: HashSet<_> = obsidian_links.iter().map(|link| link.url.clone()).collect();
+
+    // Load cached URLs to skip already-fetched links
+    let cache = Cache::new(CacheType::Disk(cache_path.to_string_lossy().into_owned()))?;
+    let cached_urls = cache.query_all_urls()?;
 
     let mut serialized_links: Vec<SerializedLink> = match std::fs::read_to_string(links_path) {
         Ok(serialized_links_file_contents) => {
@@ -116,21 +121,28 @@ pub fn import_obsidian(links_path: &Path) -> anyhow::Result<()> {
         Err(_) => Vec::new(),
     };
 
-    let serialized_link_urls: HashSet<_> = serialized_links
+    let mut serialized_link_urls: HashSet<_> = serialized_links
         .iter()
         .map(|link| link.url.clone())
         .collect();
 
+    let mut already_cached_skipped = 0;
     let mut already_serialized_skipped = 0;
     let mut serialized = 0;
 
     for link in obsidian_links {
+        if cached_urls.contains(&link.url) {
+            already_cached_skipped += 1;
+            continue;
+        }
+
         if serialized_link_urls.contains(&link.url) {
             already_serialized_skipped += 1;
             continue;
         }
 
         serialized += 1;
+        serialized_link_urls.insert(link.url.clone());
         serialized_links.push(link.into());
     }
 
@@ -140,7 +152,9 @@ pub fn import_obsidian(links_path: &Path) -> anyhow::Result<()> {
     serde_json::to_writer_pretty(serialized_links_file, &serialized_links)
         .context("Failed to write to links.json")?;
 
-    println!("Serialized {serialized} Obsidian links; {already_serialized_skipped} links already serialized");
+    println!(
+        "Serialized {serialized} Obsidian links; skipped {already_cached_skipped} already cached and {already_serialized_skipped} already in links.json"
+    );
 
     Ok(())
 }

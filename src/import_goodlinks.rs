@@ -46,7 +46,10 @@ pub fn import_goodlinks(verbose: bool, links_path: &Path, cache_path: &Path) -> 
     const LIMIT: usize = 1000;
 
     loop {
-        let url = format!("{}/api/v1/lists/read?limit={}&offset={}", base_url, LIMIT, offset);
+        let url = format!(
+            "{}/api/v1/lists/read?limit={}&offset={}",
+            base_url, LIMIT, offset
+        );
 
         let response: GoodLinksApiResponse = ureq::get(&url)
             .header("Authorization", format!("Bearer {}", token))
@@ -75,13 +78,11 @@ pub fn import_goodlinks(verbose: bool, links_path: &Path, cache_path: &Path) -> 
 
     // Load existing links.json, removing GoodLinks entries no longer in the API response
     let mut serialized_links: Vec<SerializedLink> = match std::fs::read_to_string(links_path) {
-        Ok(contents) => {
-            filter_removed_goodlinks(serde_json::from_str(&contents)?, &api_urls)
-        }
+        Ok(contents) => filter_removed_goodlinks(serde_json::from_str(&contents)?, &api_urls),
         Err(_) => Vec::new(),
     };
 
-    let serialized_link_urls: HashSet<_> = serialized_links
+    let mut serialized_link_urls: HashSet<_> = serialized_links
         .iter()
         .map(|link| link.url.clone())
         .collect();
@@ -102,6 +103,7 @@ pub fn import_goodlinks(verbose: bool, links_path: &Path, cache_path: &Path) -> 
         }
 
         serialized += 1;
+        serialized_link_urls.insert(link.url.clone());
         serialized_links.push(link.into());
     }
 
