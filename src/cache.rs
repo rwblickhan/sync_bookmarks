@@ -39,18 +39,27 @@ impl Cache {
         )
         .context("Failed to create table")?;
 
+        // `fetch_failed_at` is distinct from `archived_at` (which tracks when GoodLinks
+        // archived the link). Added after the original schema, so backfill it for existing DBs.
+        match conn.execute("ALTER TABLE cache ADD COLUMN fetch_failed_at DATETIME", []) {
+            Result::Ok(_) => {}
+            Err(rusqlite::Error::SqliteFailure(_, Some(ref msg)))
+                if msg.contains("duplicate column name") => {}
+            Err(e) => return Err(e).context("Failed to add fetch_failed_at column"),
+        }
+
         Ok(Cache { conn })
     }
 
-    /// Links that failed to fetch are archived; once an archived link is more than
-    /// `RETRY_AFTER_DAYS` old, treat it as uncached so it gets retried.
+    /// Links that failed to fetch are recorded with `fetch_failed_at`; once that's more
+    /// than `RETRY_AFTER_DAYS` old, treat the link as uncached so it gets retried.
     pub fn query(&self, url: &str) -> anyhow::Result<Option<CachedLink>> {
         let mut stmt = self
             .conn
             .prepare(
                 "SELECT url, title, source, tags, parsed_content FROM cache
                  WHERE url = :url
-                 AND (archived_at IS NULL OR archived_at > datetime('now', :retry_after))",
+                 AND (fetch_failed_at IS NULL OR fetch_failed_at > datetime('now', :retry_after))",
             )
             .with_context(|| format!("Failed to prepare query looking for link {}", url))?;
 
@@ -133,13 +142,13 @@ impl Cache {
     pub fn insert(&self, link: &CachedLink) -> anyhow::Result<()> {
         let tags_sql = serde_json::to_string(&link.tags)?;
         self.conn.execute(
-            "INSERT INTO cache (url, title, source, tags, parsed_content, archived_at) VALUES (:url, :title, :source, :tags, :parsed_content, NULL)
+            "INSERT INTO cache (url, title, source, tags, parsed_content, fetch_failed_at) VALUES (:url, :title, :source, :tags, :parsed_content, NULL)
              ON CONFLICT(url) DO UPDATE SET
                 title = excluded.title,
                 source = excluded.source,
                 tags = excluded.tags,
                 parsed_content = excluded.parsed_content,
-                archived_at = NULL",
+                fetch_failed_at = NULL",
             named_params![
                 ":url": link.url,
                 ":title": link.title,
@@ -152,18 +161,18 @@ impl Cache {
     }
 
     /// Record a link whose content could not be fetched, so it isn't retried on every run.
-    /// Stored with `archived_at` set so it's excluded from `query_unarchived` and is
-    /// retried again by `query` after `RETRY_AFTER_DAYS`.
+    /// Stored with `fetch_failed_at` set; `query` treats it as uncached again after
+    /// `RETRY_AFTER_DAYS`. Distinct from `archived_at`, which tracks GoodLinks archival.
     pub fn insert_failed(&self, link: &CachedLink) -> anyhow::Result<()> {
         let tags_sql = serde_json::to_string(&link.tags)?;
         self.conn.execute(
-            "INSERT INTO cache (url, title, source, tags, parsed_content, archived_at) VALUES (:url, :title, :source, :tags, :parsed_content, CURRENT_TIMESTAMP)
+            "INSERT INTO cache (url, title, source, tags, parsed_content, fetch_failed_at) VALUES (:url, :title, :source, :tags, :parsed_content, CURRENT_TIMESTAMP)
              ON CONFLICT(url) DO UPDATE SET
                 title = excluded.title,
                 source = excluded.source,
                 tags = excluded.tags,
                 parsed_content = excluded.parsed_content,
-                archived_at = CURRENT_TIMESTAMP",
+                fetch_failed_at = CURRENT_TIMESTAMP",
             named_params![
                 ":url": link.url,
                 ":title": link.title,
@@ -216,7 +225,7 @@ mod tests {
 
         // Backdate the failure past the retry window.
         cache.conn.execute(
-            "UPDATE cache SET archived_at = datetime('now', '-31 days') WHERE url = :url",
+            "UPDATE cache SET fetch_failed_at = datetime('now', '-31 days') WHERE url = :url",
             named_params![":url": link.url],
         )?;
 
@@ -227,7 +236,7 @@ mod tests {
     }
 
     #[test]
-    fn test_insert_after_failed_retry_clears_archived_at() -> anyhow::Result<()> {
+    fn test_insert_after_failed_retry_clears_fetch_failed_at() -> anyhow::Result<()> {
         let cache = Cache::new(CacheType::Memory)?;
         let link = CachedLink {
             url: "https://example.com".to_string(),
@@ -238,7 +247,7 @@ mod tests {
         };
         cache.insert_failed(&link)?;
         cache.conn.execute(
-            "UPDATE cache SET archived_at = datetime('now', '-31 days') WHERE url = :url",
+            "UPDATE cache SET fetch_failed_at = datetime('now', '-31 days') WHERE url = :url",
             named_params![":url": link.url],
         )?;
         assert!(cache.query(&link.url)?.is_none());
