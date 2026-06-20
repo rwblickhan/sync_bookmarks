@@ -1,7 +1,9 @@
+use std::collections::HashSet;
+use std::path::Path;
+
 use anyhow::Context;
 use pulldown_cmark::{Event, LinkType, Options, Parser, Tag, TagEnd};
 use regex::Regex;
-use std::collections::HashSet;
 use walkdir::{DirEntry, WalkDir};
 
 use crate::models::{LinkSource, ObsidianLink, SerializedLink};
@@ -90,7 +92,7 @@ fn process_markdown_files(directory: &str) -> anyhow::Result<Vec<ObsidianLink>> 
         })
 }
 
-pub fn import_obsidian() -> anyhow::Result<()> {
+pub fn import_obsidian(links_path: &Path) -> anyhow::Result<()> {
     let home = std::env::var("HOME").context("HOME env var not set")?;
     let mut obsidian_links =
         process_markdown_files(&format!("{home}/Documents/Obsidian Vaults/notes"))?;
@@ -102,7 +104,7 @@ pub fn import_obsidian() -> anyhow::Result<()> {
 
     let obsidian_urls: HashSet<_> = obsidian_links.iter().map(|link| link.url.clone()).collect();
 
-    let mut serialized_links: Vec<SerializedLink> = match std::fs::read_to_string("links.json") {
+    let mut serialized_links: Vec<SerializedLink> = match std::fs::read_to_string(links_path) {
         Ok(serialized_links_file_contents) => {
             serde_json::from_str::<Vec<SerializedLink>>(&serialized_links_file_contents)?
                 .into_iter()
@@ -133,7 +135,7 @@ pub fn import_obsidian() -> anyhow::Result<()> {
     }
 
     let serialized_links_file =
-        std::fs::File::create("links.json").context("Failed to create links.json")?;
+        std::fs::File::create(links_path).context("Failed to create links.json")?;
     let serialized_links_file = std::io::BufWriter::new(serialized_links_file);
     serde_json::to_writer_pretty(serialized_links_file, &serialized_links)
         .context("Failed to write to links.json")?;

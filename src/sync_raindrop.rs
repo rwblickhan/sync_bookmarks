@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 use std::fs;
+use std::path::Path;
 use std::process::Command;
 use std::time::Duration;
 
@@ -210,8 +211,8 @@ fn print_preview<T>(items: &[T], label: &str, fmt: impl Fn(&T) -> String) {
     }
 }
 
-pub fn sync_raindrop(dry_run: bool) -> anyhow::Result<()> {
-    let links_json = fs::read_to_string("links.json").context("Failed to read links.json")?;
+pub fn sync_raindrop(dry_run: bool, links_path: &Path) -> anyhow::Result<()> {
+    let links_json = fs::read_to_string(links_path).context("Failed to read links.json")?;
     let links: Vec<SerializedLink> =
         serde_json::from_str(&links_json).context("Failed to parse links.json")?;
 

@@ -1,3 +1,5 @@
+use std::path::Path;
+
 use anyhow::Context;
 use indicatif::ProgressBar;
 use readability::extractor;
@@ -21,11 +23,11 @@ pub const BANNED_HOSTS: &[&str] = &[
     "xn--url-u63b6dn8esao8c4jh9d2c1a0lk29262bmhrb.com",
 ];
 
-pub fn fetch_to_cache(verbose: bool) -> anyhow::Result<()> {
-    let cache = Cache::new(CacheType::Disk("cache.db".to_owned()))?;
+pub fn fetch_to_cache(verbose: bool, links_path: &Path, cache_path: &Path) -> anyhow::Result<()> {
+    let cache = Cache::new(CacheType::Disk(cache_path.to_string_lossy().into_owned()))?;
 
     let serialized_links: Vec<SerializedLink> = serde_json::from_str::<Vec<SerializedLink>>(
-        &std::fs::read_to_string("links.json").context("links.json must be created")?,
+        &std::fs::read_to_string(links_path).context("links.json must be created")?,
     )
     .context("Failed to parse links.json")?;
 

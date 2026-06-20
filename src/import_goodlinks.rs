@@ -1,4 +1,5 @@
 use std::collections::HashSet;
+use std::path::Path;
 
 use anyhow::Context;
 
@@ -32,7 +33,7 @@ fn filter_removed_goodlinks(
         .collect()
 }
 
-pub fn import_goodlinks(verbose: bool) -> anyhow::Result<()> {
+pub fn import_goodlinks(verbose: bool, links_path: &Path, cache_path: &Path) -> anyhow::Result<()> {
     let base_url = read_op_secret(GOODLINKS_OP_BASE_URL)?;
     if verbose {
         println!("GoodLinks base URL: {base_url}");
@@ -67,13 +68,13 @@ pub fn import_goodlinks(verbose: bool) -> anyhow::Result<()> {
     println!("Found {} read GoodLinks links", api_links.len());
 
     // Load cached URLs to skip already-fetched links
-    let cache = Cache::new(CacheType::Disk("cache.db".to_string()))?;
+    let cache = Cache::new(CacheType::Disk(cache_path.to_string_lossy().into_owned()))?;
     let cached_urls = cache.query_all_urls()?;
 
     let api_urls: HashSet<_> = api_links.iter().map(|link| link.url.clone()).collect();
 
     // Load existing links.json, removing GoodLinks entries no longer in the API response
-    let mut serialized_links: Vec<SerializedLink> = match std::fs::read_to_string("links.json") {
+    let mut serialized_links: Vec<SerializedLink> = match std::fs::read_to_string(links_path) {
         Ok(contents) => {
             filter_removed_goodlinks(serde_json::from_str(&contents)?, &api_urls)
         }
@@ -105,7 +106,7 @@ pub fn import_goodlinks(verbose: bool) -> anyhow::Result<()> {
     }
 
     let serialized_links_file =
-        std::fs::File::create("links.json").context("Failed to create links.json")?;
+        std::fs::File::create(links_path).context("Failed to create links.json")?;
     let serialized_links_file = std::io::BufWriter::new(serialized_links_file);
     serde_json::to_writer_pretty(serialized_links_file, &serialized_links)
         .context("Failed to write to links.json")?;

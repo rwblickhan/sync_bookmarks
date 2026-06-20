@@ -16,12 +16,15 @@ use sync_raindrop::sync_raindrop;
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
+    let links = &cli.links;
+    let cache = &cli.cache;
+
     match cli.command {
-        Commands::Raindrop { dry_run } => sync_raindrop(dry_run),
+        Commands::Raindrop { dry_run } => sync_raindrop(dry_run, links),
         Commands::Import { verbose } => {
-            import_goodlinks(verbose)?;
-            import_obsidian()?;
-            fetch_to_cache(verbose)?;
+            import_goodlinks(verbose, links, cache)?;
+            import_obsidian(links)?;
+            fetch_to_cache(verbose, links, cache)?;
             Ok(())
         }
     }

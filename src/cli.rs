@@ -1,8 +1,18 @@
+use std::path::PathBuf;
+
 use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
 pub struct Cli {
+    /// Path to links.json [default: ./links.json]
+    #[arg(long, default_value = "links.json")]
+    pub links: PathBuf,
+
+    /// Path to cache.db [default: ./cache.db]
+    #[arg(long, default_value = "cache.db")]
+    pub cache: PathBuf,
+
     #[command(subcommand)]
     pub command: Commands,
 }
