@@ -20,7 +20,7 @@ fn main() -> anyhow::Result<()> {
     let cache = &cli.cache;
 
     match cli.command {
-        Commands::Raindrop { dry_run } => sync_raindrop(dry_run, links),
+        Commands::Raindrop { dry_run } => sync_raindrop(dry_run, links, cache),
         Commands::Import { verbose } => {
             import_goodlinks(verbose, links, cache)?;
             import_obsidian(links, cache)?;

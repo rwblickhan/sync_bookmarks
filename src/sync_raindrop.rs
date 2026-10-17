@@ -8,6 +8,7 @@ use anyhow::{bail, Context};
 use serde::Deserialize;
 use ureq::http;
 
+use crate::cache::{Cache, CacheType};
 use crate::fetch::BANNED_HOSTS;
 use crate::models::{LinkSource, SerializedLink};
 
@@ -211,10 +212,18 @@ fn print_preview<T>(items: &[T], label: &str, fmt: impl Fn(&T) -> String) {
     }
 }
 
-pub fn sync_raindrop(dry_run: bool, links_path: &Path) -> anyhow::Result<()> {
+pub fn sync_raindrop(dry_run: bool, links_path: &Path, cache_path: &Path) -> anyhow::Result<()> {
     let links_json = fs::read_to_string(links_path).context("Failed to read links.json")?;
-    let links: Vec<SerializedLink> =
+    let mut links: Vec<SerializedLink> =
         serde_json::from_str(&links_json).context("Failed to parse links.json")?;
+
+    let cache = Cache::new(CacheType::Disk(cache_path.to_string_lossy().into_owned()))?;
+    let cached_titles = cache.query_all_titles()?;
+    for link in links.iter_mut().filter(|l| l.source == LinkSource::Obsidian) {
+        if let Some(title) = cached_titles.get(&link.url) {
+            link.title = title.clone();
+        }
+    }
 
     println!("Loaded {} links from links.json", links.len());
 
