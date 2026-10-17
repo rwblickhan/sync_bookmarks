@@ -169,10 +169,23 @@ fn is_banned(url: &str) -> bool {
         .is_some_and(|host| BANNED_HOSTS.contains(&host.as_str()))
 }
 
+fn is_tracking_param(key: &str) -> bool {
+    key.starts_with("utm_") || matches!(key, "fbclid" | "gclid" | "ref" | "si")
+}
+
 fn normalize_url(url: &str) -> String {
     match url::Url::parse(url) {
         Ok(mut parsed) => {
-            parsed.set_query(None);
+            let query: Vec<(String, String)> = parsed
+                .query_pairs()
+                .filter(|(k, _)| !is_tracking_param(k))
+                .map(|(k, v)| (k.into_owned(), v.into_owned()))
+                .collect();
+            if query.is_empty() {
+                parsed.set_query(None);
+            } else {
+                parsed.query_pairs_mut().clear().extend_pairs(query);
+            }
             parsed.set_fragment(None);
             let path = parsed.path().trim_end_matches('/').to_string();
             parsed.set_path(if path.is_empty() { "/" } else { &path });
@@ -401,4 +414,29 @@ pub fn sync_raindrop(dry_run: bool, links_path: &Path, cache_path: &Path) -> any
 
     println!("\nSync complete!");
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_normalize_keeps_identifying_query() {
+        assert_ne!(
+            normalize_url("https://www.youtube.com/watch?v=8Uk6Inn7OvQ"),
+            normalize_url("https://www.youtube.com/watch?v=tREOeneo7gY")
+        );
+    }
+
+    #[test]
+    fn test_normalize_strips_tracking_params() {
+        assert_eq!(
+            normalize_url("https://example.org/post/?utm_source=x&utm_medium=y#frag"),
+            normalize_url("https://example.org/post")
+        );
+        assert_eq!(
+            normalize_url("https://www.youtube.com/watch?v=abc&si=xyz"),
+            normalize_url("https://www.youtube.com/watch?v=abc")
+        );
+    }
 }
